@@ -6,6 +6,7 @@ import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
+import Restaurant from '../components/Restaurant';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <About />
       <Gallery />
       <Testimonials />
+      <Restaurant />
       <Contact />
       <Footer />
     </div>
