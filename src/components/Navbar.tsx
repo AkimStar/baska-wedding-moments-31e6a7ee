@@ -32,14 +32,16 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed w-full z-50 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-white shadow-sm" : "bg-transparent"
+        scrolled 
+          ? "bg-gradient-to-r from-[#F9F6F2] to-[#F1EBE2] shadow-sm backdrop-blur-sm" 
+          : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex justify-between items-center">
         <a 
           href="#home" 
           className={cn(
-            "font-medium text-lg",
+            "font-medium text-lg transition-colors duration-300",
             scrolled ? "text-black" : "text-white"
           )}
         >
@@ -58,8 +60,8 @@ const Navbar = () => {
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={cn(
-                "navbar-link transition-colors",
-                scrolled ? "text-black" : "text-white"
+                "navbar-link transition-all duration-300 hover:scale-105",
+                scrolled ? "text-black/80 hover:text-black" : "text-white/90 hover:text-white"
               )}
             >
               {item.name}
@@ -70,7 +72,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button 
             className={cn(
-              "p-2",
+              "p-2 transition-colors duration-300",
               scrolled ? "text-black" : "text-white"
             )}
           >

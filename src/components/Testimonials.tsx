@@ -24,24 +24,24 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-blush">
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-[#F1EBE2] to-[#F9F6F2]">
       <div className="container mx-auto px-6">
-        <h2 className="heading-2 text-center mb-16">Избрани щастливи двойки</h2>
+        <h2 className="heading-2 text-center mb-16 text-gray-800">Избрани щастливи двойки</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
+            <div key={testimonial.id} className="testimonial-card hover-lift transition-all duration-300">
               <div className="mb-6 h-48 overflow-hidden rounded-lg">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.couple} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
               </div>
               <blockquote className="italic text-gray-700 mb-4">
                 "{testimonial.quote}"
               </blockquote>
-              <p className="font-medium">— {testimonial.couple}</p>
+              <p className="font-medium text-gray-800">— {testimonial.couple}</p>
             </div>
           ))}
         </div>
