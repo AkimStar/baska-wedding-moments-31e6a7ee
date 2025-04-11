@@ -24,7 +24,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-b from-[#F1EBE2] to-[#F9F6F2]">
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-[#E6D7C3] to-[#F0E6D8]">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-16 text-gray-800">Избрани щастливи двойки</h2>
         

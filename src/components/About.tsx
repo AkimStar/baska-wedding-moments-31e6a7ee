@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-[#F9F6F2] to-[#F1EBE2]">
+    <section id="about" className="section-padding bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8]">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-16 text-gray-800">Запознай се с Баска Продъкшън</h2>
         

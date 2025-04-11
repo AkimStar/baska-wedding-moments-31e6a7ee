@@ -34,7 +34,7 @@ const Hero = () => {
           alt="Сватбена двойка" 
           className="w-full h-full object-cover opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#F9F6F2]/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#F9F4EC]/70"></div>
       </div>
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
@@ -46,8 +46,8 @@ const Hero = () => {
           </p>
           <Button 
             onClick={scrollToGallery}
-            className="animate-fade-in-up opacity-0 [animation-delay:900ms] bg-gradient-to-r from-white/90 to-[#F1EBE2]/90 
-            text-black hover:from-[#F1EBE2] hover:to-white/90 uppercase text-sm tracking-wider font-medium py-6 px-8 
+            className="animate-fade-in-up opacity-0 [animation-delay:900ms] bg-gradient-to-r from-[#F9F4EC]/90 to-[#E6D7C3]/90 
+            text-black hover:from-[#E6D7C3] hover:to-[#F9F4EC]/90 uppercase text-sm tracking-wider font-medium py-6 px-8 
             border border-white/30 shadow-sm"
           >
             Вижте повече

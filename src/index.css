@@ -16,24 +16,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 36 25% 94%;
-    --primary-foreground: 36 10% 20%;
+    --primary: 40 70% 95%;
+    --primary-foreground: 40 10% 20%;
 
-    --secondary: 36 30% 96%;
-    --secondary-foreground: 36 10% 20%;
+    --secondary: 40 80% 97%;
+    --secondary-foreground: 40 10% 20%;
 
-    --muted: 36 15% 96%;
-    --muted-foreground: 36 5% 45%;
+    --muted: 40 20% 96%;
+    --muted-foreground: 40 5% 45%;
 
-    --accent: 36 25% 94%;
+    --accent: 40 70% 95%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 36 15% 90%;
-    --input: 36 15% 90%;
-    --ring: 36 5% 70%;
+    --border: 40 30% 90%;
+    --input: 40 30% 90%;
+    --ring: 40 30% 70%;
 
     --radius: 0.5rem;
   }
@@ -49,7 +49,7 @@
   body {
     @apply text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background: linear-gradient(to bottom, #F9F6F2, #F1EBE2); /* Champagne gradient background */
+    background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3); /* Enhanced champagne gradient */
   }
   
   .hero-overlay {
@@ -94,21 +94,21 @@
   }
   
   .testimonial-card {
-    @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#F1EBE2]/50;
+    @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#E6D7C3]/50;
   }
   
   .footer {
-    @apply bg-[#F9F6F2] text-black py-10;
+    @apply bg-[#F9F4EC] text-black py-10;
   }
 
-  /* New gradient styles */
+  /* Enhanced gradient styles */
   .champagne-card {
-    @apply bg-gradient-to-b from-[#F9F6F2] to-[#F1EBE2] border border-[#EAE0D0]/20 shadow-sm;
+    @apply bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3] border border-[#E6D7C3]/30 shadow-sm;
   }
   
   .champagne-button {
-    @apply bg-gradient-to-r from-[#F9F6F2] to-[#EAE0D0] hover:from-[#EAE0D0] hover:to-[#F9F6F2] text-black/80 
-           border border-[#EAE0D0] transition-all duration-300;
+    @apply bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] hover:from-[#E6D7C3] hover:to-[#F9F4EC] text-black/80 
+           border border-[#E6D7C3] transition-all duration-300;
   }
   
   .glass-effect {

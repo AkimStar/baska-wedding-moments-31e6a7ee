@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-[#F9F6F2] to-[#F1EBE2]">
+    <section id="contact" className="section-padding bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8]">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-8 text-gray-800">Нека създадем магия</h2>
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12">
@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
           <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
             <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F6F2] to-[#EAE0D0] rounded-full flex items-center justify-center mb-4 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <Mail className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Имейл</h3>
@@ -29,7 +29,7 @@ const Contact = () => {
           
           <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
             <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F6F2] to-[#EAE0D0] rounded-full flex items-center justify-center mb-4 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <Phone className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Телефон</h3>
@@ -42,7 +42,7 @@ const Contact = () => {
           
           <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
             <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F6F2] to-[#EAE0D0] rounded-full flex items-center justify-center mb-4 shadow-sm">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
                 <MapPin className="w-6 h-6 text-gray-700" />
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Адрес</h3>

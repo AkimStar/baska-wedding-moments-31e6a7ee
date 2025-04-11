@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const Restaurant = () => {
   return (
-    <section id="restaurant" className="section-padding relative bg-gradient-to-b from-[#F9F6F2] to-[#F1EBE2]">
+    <section id="restaurant" className="section-padding relative bg-gradient-to-b from-[#F0E6D8] to-[#F9F4EC]">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-10 text-gray-800">Нашият ресторант</h2>
         <p className="text-center text-gray-700 max-w-3xl mx-auto mb-12">
@@ -23,7 +23,7 @@ const Restaurant = () => {
             
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F6F2] to-[#EAE0D0] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -31,7 +31,7 @@ const Restaurant = () => {
                 <p className="text-gray-700">Просторна градина за официална церемония</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F6F2] to-[#EAE0D0] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -39,7 +39,7 @@ const Restaurant = () => {
                 <p className="text-gray-700">Ексклузивно меню от нашия главен готвач</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F6F2] to-[#EAE0D0] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -47,7 +47,7 @@ const Restaurant = () => {
                 <p className="text-gray-700">Професионален персонал и организатори</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F6F2] to-[#EAE0D0] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -70,9 +70,9 @@ const Restaurant = () => {
           </div>
         </div>
         
-        <div className="bg-white/60 backdrop-blur-sm p-6 rounded-lg shadow-sm border border-[#EAE0D0]/30 mb-10">
+        <div className="bg-white/60 backdrop-blur-sm p-6 rounded-lg shadow-sm border border-[#E6D7C3]/30 mb-10">
           <h3 className="heading-3 mb-4 text-center text-gray-800">Нашето местоположение</h3>
-          <div className="h-[400px] w-full rounded-lg overflow-hidden border border-[#EAE0D0]/20">
+          <div className="h-[400px] w-full rounded-lg overflow-hidden border border-[#E6D7C3]/20">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46660.69541473586!2d23.294632287418866!3d42.69539553327771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8682cb317bf5%3A0x400a01269bf5e60!2z0KHQvtGE0LjRjywg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1649675165883!5m2!1sbg!2sbg" 
               width="100%" 
@@ -86,7 +86,7 @@ const Restaurant = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#EAE0D0]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img 
@@ -100,7 +100,7 @@ const Restaurant = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#EAE0D0]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img 
@@ -114,7 +114,7 @@ const Restaurant = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#EAE0D0]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img 
