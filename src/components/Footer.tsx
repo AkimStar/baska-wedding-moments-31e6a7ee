@@ -9,7 +9,7 @@ const Footer = () => {
       });
     }
   };
-  return <footer className="py-15">
+  return <footer className="py-10">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">
