@@ -9,7 +9,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden rounded-lg shadow-md hover-lift">
             <img 
-              src="/lovable-uploads/about-image.jpeg"
+              src="/public/lovable-uploads/about-image.jpeg"
               alt="Baska Production Team"
               className="w-full h-full object-cover rounded-lg"
             />

@@ -29,7 +29,7 @@ const Hero = () => {
       <img
         src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
         alt="Wedding couple by the sea"
-        className="w-full h-full object-cover object-center"
+        className="w-full h-full object-cover md:object-[center_25%]"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/30" />
