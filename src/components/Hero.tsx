@@ -27,7 +27,7 @@ const Hero = () => {
     {/* Hero background image */}
     <div className="absolute inset-0">
       <img
-        src="/baska-wedding-moments-31e6a7ee/lovable-uploads/hero-image.jpg"
+        src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
         alt="Wedding couple by the sea"
         className="w-full h-full object-cover object-center"
       />
