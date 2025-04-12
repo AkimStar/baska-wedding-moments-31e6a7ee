@@ -41,11 +41,15 @@ const Navbar = () => {
         <a 
           href="#home" 
           className={cn(
-            "font-medium text-lg transition-colors duration-300",
+            "flex items-center space-x-2 transition-colors duration-300",
             scrolled ? "text-black" : "text-white"
           )}
         >
-          BASKA PRODUCTION
+          <img 
+            src="/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" 
+            alt="Baska Production Logo" 
+            className="h-10 w-auto"
+          />
         </a>
         
         <div className="hidden md:flex space-x-8">

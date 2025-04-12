@@ -16,8 +16,12 @@ const Footer = () => {
     <footer className="py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
-          <div className="mb-8">
-            <h3 className="font-semibold text-xl mb-3 text-gray-800">BASKA PRODUCTION</h3>
+          <div className="mb-8 flex flex-col items-center">
+            <img 
+              src="/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" 
+              alt="Baska Production Logo" 
+              className="h-16 w-auto mb-3"
+            />
             <p className="text-sm text-gray-600">Сватбен фотограф</p>
           </div>
           
