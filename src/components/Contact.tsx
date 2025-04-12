@@ -63,16 +63,14 @@ const Contact = () => {
               </a>
             </Button>
             <Button variant="outline" className="rounded-full w-12 h-12 p-0 flex items-center justify-center champagne-button hover-lift" asChild>
-              <a href="https://www.tiktok.com/@baska_tm" target="_blank" rel="noopener noreferrer">
-                <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
-                  <path d="M16 8v8"></path>
-                  <path d="M12 16v4"></path>
-                  <path d="M17 17v.01"></path>
-                  <path d="M12 12v8"></path>
-                  <path d="M5 8v.01"></path>
-                  <path d="M16.243 3.757c1.562 1.562 2.325 3.57 2.157 5.643h3.6v2.4H16v4.8h-2.4v-8.486c0-2.684-3.201-4.029-5.114-2.114c-1.514 1.514-1.212 4.228.6 6.043">
-                  </path>
+              <a
+                href="https://www.tiktok.com/@baskaproduction"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 015.9 5.82s-.51.5 0 0zm-1.84-2.16a4.278 4.278 0 01-8.24 2.16s-.51.5 0 0a4.278 4.278 0 018.24-2.16s.51-.5 0 0z"/>
+                  <path d="M19 10.5V8.8h-2.6v9.4a2.93 2.93 0 01-2.93 2.93 2.93 2.93 0 01-2.93-2.93 2.93 2.93 0 012.93-2.93c.16 0 .31.02.46.05v-1.72a4.78 4.78 0 00-6.78 4.6A4.78 4.78 0 0013.4 22a4.78 4.78 0 004.78-4.78V10.5H19z"/>
                 </svg>
               </a>
             </Button>
