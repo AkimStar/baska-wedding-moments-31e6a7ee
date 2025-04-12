@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About = () => {
@@ -10,9 +9,9 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden rounded-lg shadow-md hover-lift">
             <img 
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" 
-              alt="Фотограф Баска" 
-              className="w-full h-auto"
+              src="/baska-wedding-moments-31e6a7ee/lovable-uploads/about-couple-image.jpg"
+              alt="Baska Production Team"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
           
