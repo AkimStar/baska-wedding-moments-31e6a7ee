@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-
 const Contact = () => {
-  return (
-    <section id="contact" className="section-padding">
+  return <section id="contact" className="section-padding">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-8 text-gray-800">Нека създадем магия</h2>
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12">
@@ -34,9 +31,7 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Телефон</h3>
               <p className="text-gray-600 mb-4">На линия сме всеки ден</p>
-              <a href="tel:+359888123456" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">
-                +359 888 123 456
-              </a>
+              <a href="tel:+359888123456" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">+359 897 660 627</a>
             </div>
           </Card>
           
@@ -92,8 +87,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
