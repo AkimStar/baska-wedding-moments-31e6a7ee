@@ -59,7 +59,7 @@ const Navbar = () => {
           )}
         >
           <img 
-            src="/baska-wedding-moments-31e6a7ee/lovable-uploads/5adf8171-bcd8-4e70-a1c4-8cd4a6500980.png" 
+            src="/logo.png" 
             alt="Baska Production Logo" 
             className="h-16 w-auto"
           />

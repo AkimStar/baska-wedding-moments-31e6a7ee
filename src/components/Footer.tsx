@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">
             <img 
-              src="/baska-wedding-moments-31e6a7ee/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" 
+              src="/logo.png" 
               alt="Baska Production Logo" 
               className="h-16 w-auto mb-3" 
             />
