@@ -56,7 +56,7 @@ const Restaurant = () => {
           
           <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg hover-lift">
             <img 
-              src="/baska-wedding-moments-31e6a7ee/lovable-uploads/restaurant-image.jpg"
+              src="/lovable-uploads/restaurant-image.jpeg"
               alt="Черно и Бяло - Елегантна обстановка"
               className="w-full h-full object-cover rounded-lg"
             />
