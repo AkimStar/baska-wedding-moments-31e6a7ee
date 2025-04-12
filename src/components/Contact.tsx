@@ -64,7 +64,7 @@ const Contact = () => {
             </Button>
             <Button variant="outline" className="rounded-full w-12 h-12 p-0 flex items-center justify-center champagne-button hover-lift" asChild>
               <a
-                href="https://www.tiktok.com/@baskaproduction"
+                href="https://www.tiktok.com/@baska_tm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
