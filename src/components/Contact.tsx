@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 
 const Contact = () => {
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8]">
+    <section id="contact" className="section-padding">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-8 text-gray-800">Нека създадем магия</h2>
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12">

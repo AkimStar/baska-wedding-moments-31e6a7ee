@@ -16,15 +16,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3]">
+    <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <About />
-      <Gallery />
-      <Testimonials />
-      <Restaurant />
-      <Contact />
-      <Footer />
+      <div className="bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3]">
+        <About />
+        <Gallery />
+        <Testimonials />
+        <Restaurant />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

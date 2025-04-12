@@ -108,7 +108,7 @@ const Gallery = () => {
     : null;
 
   return (
-    <section id="gallery" className="section-padding bg-white">
+    <section id="gallery" className="section-padding bg-white/60 backdrop-blur-sm">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-10">Магията в кадри</h2>
         
