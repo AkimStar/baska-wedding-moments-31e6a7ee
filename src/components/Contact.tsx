@@ -10,50 +10,44 @@ const Contact = () => {
           Искате да запечатаме вашите специални моменти? Свържете се с нас, за да обсъдим детайлите и да създадем вашата сватбена история.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-10">
-          <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
-                <Mail className="w-6 h-6 text-gray-700" />
-              </div>
-              <h3 className="font-semibold mb-1 text-gray-800">Имейл</h3>
-              <p className="text-gray-600 mb-4">Пишете ни по всяко време</p>
-              <a href="mailto:djanbasri@abv.bg" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">
-                djanbasri@abv.bg
-              </a>
-            </div>
-          </Card>
-          
-          <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
-                <Phone className="w-6 h-6 text-gray-700" />
-              </div>
-              <h3 className="font-semibold mb-1 text-gray-800">Телефон</h3>
-              <p className="text-gray-600 mb-4">На линия сме всеки ден</p>
-              <a href="tel:+359897660627" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">+359 897 660 627</a>
-            </div>
-          </Card>
-          
-          <Card className="champagne-card rounded-lg p-6 text-center hover-lift">
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#F9F4EC] to-[#E6D7C3] rounded-full flex items-center justify-center mb-4 shadow-sm">
-                <MapPin className="w-6 h-6 text-gray-700" />
-              </div>
-              <h3 className="font-semibold mb-1 text-gray-800">Адрес</h3>
-              <p className="text-gray-600 mb-4">Посетете ни на място</p>
-              <address className="not-italic text-gray-700">
-                <a 
-                  href="https://maps.app.goo.gl/GAHXmcU6UY78Kbjt5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-gray-900 transition-colors duration-200"
-                >
-                  бул. Велико Търново №35, гр. Силистра
-                </a>
-              </address>
-            </div>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="text-center">
+            <Mail className="w-6 h-6 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Имейл</h3>
+            <p className="text-gray-700 mb-2">Пишете ни по всяко време</p>
+            <a 
+              href="mailto:djanbasri@abv.bg" 
+              className="hover:text-gray-900 transition-colors duration-200"
+            >
+              djanbasri@abv.bg
+            </a>
+          </div>
+
+          <div className="text-center">
+            <Phone className="w-6 h-6 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Телефон</h3>
+            <p className="text-gray-700 mb-2">На линия сме всеки ден</p>
+            <a 
+              href="tel:+359897660627" 
+              className="hover:text-gray-900 transition-colors duration-200"
+            >
+              +359 897 650 627
+            </a>
+          </div>
+
+          <div className="text-center">
+            <MapPin className="w-6 h-6 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Адрес</h3>
+            <p className="text-gray-700 mb-2">Посетете ни на място</p>
+            <a 
+              href="https://maps.app.goo.gl/GAHXmcU6UY78Kbjt5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-900 transition-colors duration-200"
+            >
+              бул. Велико Търново №35, гр. Силистра
+            </a>
+          </div>
         </div>
         
         <div className="max-w-lg mx-auto">
