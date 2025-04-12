@@ -63,12 +63,18 @@ const Restaurant = () => {
           </div>
         </div>
         
-        <div className="bg-white/60 backdrop-blur-sm p-6 rounded-lg shadow-sm border border-[#E6D7C3]/30 mb-10">
-          <h3 className="heading-3 mb-4 text-center text-gray-800">Нашето местоположение</h3>
-          <div className="h-[400px] w-full rounded-lg overflow-hidden border border-[#E6D7C3]/20">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46660.69541473586!2d23.294632287418866!3d42.69539553327771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8682cb317bf5%3A0x400a01269bf5e60!2z0KHQvtGE0LjRjywg0JHRitC70LPQsNGA0LjRjw!5e0!3m2!1sbg!2sbg!4v1649675165883!5m2!1sbg!2sbg" width="100%" height="100%" style={{
-            border: 0
-          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        <div className="w-full max-w-5xl mx-auto p-4">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Нашето местоположение</h2>
+          <div className="w-full h-[450px] rounded-lg overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
         
