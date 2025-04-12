@@ -55,7 +55,11 @@ const Restaurant = () => {
           </div>
           
           <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg hover-lift">
-            <img alt="Черно и Бяло - Елегантна обстановка" className="w-full h-full object-cover rounded-lg" src="/lovable-uploads/9bd7c914-1906-4226-a7cc-7efcf570d297.jpg" />
+            <img 
+              src="/public/lovable-uploads/restaurant-image.jpeg"
+              alt="Черно и Бяло - Елегантна обстановка"
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
         </div>
         
@@ -64,9 +68,14 @@ const Restaurant = () => {
             <h2 className="text-4xl font-semibold mb-12 text-center">Нашето местоположение</h2>
             
             <div className="w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg mb-12">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg" className="w-full h-full" style={{
-              border: 0
-            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <div className="text-center">
