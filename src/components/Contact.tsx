@@ -18,8 +18,8 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Имейл</h3>
               <p className="text-gray-600 mb-4">Пишете ни по всяко време</p>
-              <a href="mailto:hello@baskaproduction.com" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">
-                hello@baskaproduction.com
+              <a href="mailto:djanbasri@abv.bg" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">
+                djanbasri@abv.bg
               </a>
             </div>
           </Card>
@@ -31,7 +31,7 @@ const Contact = () => {
               </div>
               <h3 className="font-semibold mb-1 text-gray-800">Телефон</h3>
               <p className="text-gray-600 mb-4">На линия сме всеки ден</p>
-              <a href="tel:+359888123456" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">+359 897 660 627</a>
+              <a href="tel:+359897660627" className="text-gray-700 hover:text-black transition-colors underline decoration-dotted underline-offset-4">+359 897 660 627</a>
             </div>
           </Card>
           
@@ -43,7 +43,14 @@ const Contact = () => {
               <h3 className="font-semibold mb-1 text-gray-800">Адрес</h3>
               <p className="text-gray-600 mb-4">Посетете ни на място</p>
               <address className="not-italic text-gray-700">
-                ул. Витоша 15, гр. София
+                <a 
+                  href="https://maps.app.goo.gl/GAHXmcU6UY78Kbjt5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-900 transition-colors duration-200"
+                >
+                  бул. Велико Търново №35, гр. Силистра
+                </a>
               </address>
             </div>
           </Card>
@@ -52,17 +59,17 @@ const Contact = () => {
         <div className="max-w-lg mx-auto">
           <div className="flex justify-center space-x-4 mb-12">
             <Button variant="outline" className="rounded-full w-12 h-12 p-0 flex items-center justify-center champagne-button hover-lift" asChild>
-              <a href="https://www.facebook.com/baskaproduction" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/djankooo" target="_blank" rel="noopener noreferrer">
                 <Facebook className="w-5 h-5" />
               </a>
             </Button>
             <Button variant="outline" className="rounded-full w-12 h-12 p-0 flex items-center justify-center champagne-button hover-lift" asChild>
-              <a href="https://www.instagram.com/baskaproduction" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/djan.bm" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-5 h-5" />
               </a>
             </Button>
             <Button variant="outline" className="rounded-full w-12 h-12 p-0 flex items-center justify-center champagne-button hover-lift" asChild>
-              <a href="https://www.tiktok.com/@baskaproduction" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.tiktok.com/@baska_tm" target="_blank" rel="noopener noreferrer">
                 <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
                   <path d="M16 8v8"></path>
@@ -78,9 +85,8 @@ const Contact = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-gray-700 mb-3">Предпочитате да ви се обадим?</p>
             <Button className="champagne-button shadow-md px-8 py-6" asChild>
-              <a href="tel:+359888123456">
+              <a href="tel:+359897660627">
                 Обадете се сега
               </a>
             </Button>

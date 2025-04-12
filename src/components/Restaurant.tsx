@@ -52,14 +52,14 @@ const Restaurant = () => {
                 <p className="text-gray-700">Възможност за персонализиране на декорацията</p>
               </div>
             </div>
-            
-            <Button variant="outline" className="w-fit champagne-button hover-lift">
-              Изискайте оферта
-            </Button>
           </div>
           
           <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg hover-lift">
-            <img src="https://images.unsplash.com/photo-1529290130-4ca3753253ae?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" alt="Ресторант Магия" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+            <img 
+              src="/baska-wedding-moments-31e6a7ee/lovable-uploads/restaurant-image.jpg"
+              alt="Черно и Бяло - Елегантна обстановка"
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
         </div>
         
