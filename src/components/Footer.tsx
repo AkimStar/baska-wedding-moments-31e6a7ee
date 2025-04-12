@@ -13,7 +13,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">
-            <img src="/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" alt="Baska Production Logo" className="h-16 w-auto mb-3" />
+            <img 
+              src="/baska-wedding-moments-31e6a7ee/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" 
+              alt="Baska Production Logo" 
+              className="h-16 w-auto mb-3" 
+            />
             <p className="text-sm text-gray-600">Сватбен фотограф</p>
           </div>
           
