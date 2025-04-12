@@ -46,9 +46,9 @@ const Navbar = () => {
           )}
         >
           <img 
-            src="/lovable-uploads/033246c7-cdf7-4741-8907-1d0db16aa268.png" 
+            src="/lovable-uploads/5adf8171-bcd8-4e70-a1c4-8cd4a6500980.png" 
             alt="Baska Production Logo" 
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
         </a>
         
