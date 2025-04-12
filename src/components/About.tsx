@@ -1,18 +1,12 @@
 import React from 'react';
-
 const About = () => {
-  return (
-    <section id="about" className="section-padding">
+  return <section id="about" className="section-padding">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-16 text-gray-800">Запознай се с Баска Продъкшън</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden rounded-lg shadow-md hover-lift">
-            <img 
-              src="/public/lovable-uploads/about-image.jpeg"
-              alt="Baska Production Team"
-              className="w-full h-full object-cover rounded-lg"
-            />
+            <img alt="Baska Production Team" className="w-full h-full object-cover rounded-lg" src="https://i.ibb.co/Kz3CvBFM/about-image.jpg" />
           </div>
           
           <div className="space-y-6 champagne-card p-8 rounded-lg">
@@ -30,8 +24,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
