@@ -63,20 +63,29 @@ const Restaurant = () => {
           </div>
         </div>
         
-        <div className="w-full max-w-5xl mx-auto p-4">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Нашето местоположение</h2>
-          <div className="w-full h-[450px] rounded-lg overflow-hidden">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+        <section className="py-16 bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8]">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-semibold mb-12 text-center">Нашето местоположение</h2>
+            
+            <div className="w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg mb-12">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold mb-2">Черно и Бяло</h3>
+              <p className="text-lg text-gray-700">
+                Център, бул. „Велико Търново" 35, 7500 Силистра
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30">
