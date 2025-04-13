@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -56,7 +55,7 @@ const Restaurant = () => {
           </div>
           
           <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg hover-lift">
-            <img alt="Черно и Бяло - Елегантна обстановка" className="w-full h-full object-cover rounded-lg" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&ixlib=rb-4.0.3" />
+            <img alt="Черно и Бяло - Елегантна обстановка" className="w-full h-full object-cover rounded-lg" src="https://i.ibb.co/HfRs9WjC/restaurant-image.jpg" />
           </div>
         </div>
         
@@ -83,7 +82,7 @@ const Restaurant = () => {
           <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
-                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&ixlib=rb-4.0.3" alt="Градинска церемония" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" alt="Градинска церемония" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
               </div>
               <h4 className="font-semibold mb-2 text-gray-800">Градинска церемония</h4>
               <p className="text-gray-700 text-sm">Романтична обстановка за вашата официална церемония на открито.</p>
