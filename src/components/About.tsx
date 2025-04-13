@@ -51,7 +51,7 @@ const About = () => {
             <img 
               alt="Baska Production Team" 
               className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" 
-              src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" 
+              src="/lovable-uploads/about-image.jpeg" 
             />
           </div>
           
