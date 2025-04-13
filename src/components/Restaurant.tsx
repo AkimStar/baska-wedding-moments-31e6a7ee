@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -56,7 +55,7 @@ const Restaurant = () => {
           </div>
           
           <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg hover-lift">
-            <img alt="Черно и Бяло - Елегантна обстановка" className="w-full h-full object-cover rounded-lg" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />
+            <img alt="Черно и Бяло - Елегантна обстановка" className="w-full h-full object-cover rounded-lg" src="https://i.ibb.co/HfRs9WjC/restaurant-image.jpg" />
           </div>
         </div>
         

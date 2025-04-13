@@ -30,7 +30,7 @@ const Limousine = () => {
             <img 
               alt="Бяла лимузина под наем" 
               className="w-full h-full object-cover rounded-lg" 
-              src="https://images.unsplash.com/photo-1515876305430-f06edab8282a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+              src="https://images.unsplash.com/photo-1563871522539-3310f566bade?q=80&w=1920" 
             />
           </div>
         </div>
