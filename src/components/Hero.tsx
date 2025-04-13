@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 const Hero = () => {
@@ -15,6 +16,7 @@ const Hero = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
   const scrollToGallery = () => {
     const gallerySection = document.getElementById('gallery');
     if (gallerySection) {
@@ -23,6 +25,16 @@ const Hero = () => {
       });
     }
   };
+  
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+  
   return <section id="home" className="relative min-h-screen w-full">
     {/* Hero background image */}
     <div className="absolute inset-0">
