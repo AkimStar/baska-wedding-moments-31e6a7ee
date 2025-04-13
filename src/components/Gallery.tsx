@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const galleryItems = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
     alt: "Сватбена двойка в градина",
     categories: ["all", "outdoor"]
   },
@@ -18,7 +18,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1525328557782-aec4d9b769de?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1606216794074-735e91fa7f53?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
     alt: "Сватбена церемония",
     categories: ["all", "outdoor"]
   },
@@ -54,7 +54,7 @@ const galleryItems = [
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1583939411023-c22e67fc0322?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
     alt: "Сватбен прием",
     categories: ["all", "city"]
   }

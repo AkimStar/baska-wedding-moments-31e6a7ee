@@ -33,7 +33,7 @@ const Hero = () => {
       {/* Hero background image with enhanced quality */}
       <div className="absolute inset-0" id="hero-background">
         <img
-          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
+          src="https://images.unsplash.com/photo-1606216794074-735e91fa7f53?auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
           alt="Wedding couple by the sea"
           className="w-full h-full object-cover md:object-[center_25%]"
         />
