@@ -6,13 +6,13 @@ const testimonials = [
     id: 1,
     quote: "Баска ни направи най-прекрасните снимки от нашия специален ден. Тя успя да улови всяка емоция, всеки момент, който иначе щеше да бъде забравен. Професионализъм от най-високо качество!",
     couple: "Мария и Георги",
-    image: "https://images.unsplash.com/photo-1516542076529-1bddd0f6a639?auto=format&fit=crop&q=80&w=2342&ixlib=rb-4.0.3"
+    image: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 2,
     quote: "Невероятен талант! Баска има уникалното умение да улавя моменти и емоции по начин, който ни връща към деня на нашата сватба всеки път, когато погледнем снимките.",
     couple: "Елена и Димитър",
-    image: "https://images.unsplash.com/photo-1522827049445-ff1922fc752a?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3"
+    image: "https://images.unsplash.com/photo-1571984129381-41d698ebca6b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 3,

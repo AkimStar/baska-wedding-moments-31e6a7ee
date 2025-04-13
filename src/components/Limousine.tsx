@@ -46,7 +46,7 @@ const Limousine = () => {
             <img 
               alt="Бяла лимузина под наем" 
               className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" 
-              src="https://images.unsplash.com/photo-1563871522539-3310f566bade?q=80&w=1920" 
+              src="https://images.unsplash.com/photo-1676107648535-931375db52e2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
             />
             <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20">
               <span className="text-white font-medium">Луксозен транспорт</span>
