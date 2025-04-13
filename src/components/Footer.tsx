@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Instagram, Facebook, Phone } from 'lucide-react';
 const Footer = () => {
@@ -34,6 +35,9 @@ const Footer = () => {
           }, {
             name: "Ресторант",
             id: "restaurant"
+          }, {
+            name: "Лимузина",
+            id: "limousine"
           }, {
             name: "Отзиви",
             id: "testimonials"
