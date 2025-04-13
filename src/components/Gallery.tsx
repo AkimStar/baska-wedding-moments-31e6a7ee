@@ -18,7 +18,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1525328557782-aec4d9b769de?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1595407753234-0882f1e77954?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Сватбена церемония",
     categories: ["all", "outdoor"]
   },
@@ -54,7 +54,7 @@ const galleryItems = [
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1583939411023-c22e67fc0322?auto=format&fit=crop&q=80&ixlib=rb-4.0.3",
+    src: "https://images.unsplash.com/photo-1731515672817-0491d19c9f19?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Сватбен прием",
     categories: ["all", "city"]
   }
