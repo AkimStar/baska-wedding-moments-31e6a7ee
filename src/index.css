@@ -44,10 +44,11 @@
 
   html {
     scroll-behavior: smooth;
+    @apply overflow-x-hidden;
   }
 
   body {
-    @apply text-foreground font-inter;
+    @apply text-foreground font-inter overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
     background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3); /* Enhanced champagne gradient */
   }
@@ -57,7 +58,7 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
   
   .heading-1 {
@@ -117,5 +118,107 @@
   
   .hover-lift {
     @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md;
+  }
+}
+
+@layer utilities {
+  /* Enhanced animation keyframes */
+  @keyframes fade-in {
+    0% { 
+      opacity: 0; 
+      transform: translateY(20px);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-in {
+    0% { 
+      transform: scale(0.95); 
+      opacity: 0;
+    }
+    100% { 
+      transform: scale(1); 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    0% { 
+      transform: translateX(30px); 
+      opacity: 0;
+    }
+    100% { 
+      transform: translateX(0); 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-left {
+    0% { 
+      transform: translateX(-30px); 
+      opacity: 0;
+    }
+    100% { 
+      transform: translateX(0); 
+      opacity: 1;
+    }
+  }
+  
+  /* Custom animation classes */
+  .animate-fade-in-up {
+    animation: fade-in 0.7s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slide-in-left 0.5s ease-out forwards;
+  }
+  
+  /* Staggered animations - add with inline style delay */
+  .stagger-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .stagger-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .stagger-item:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .stagger-item:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .stagger-item:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  /* Enhanced hover effects */
+  .hover-grow {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#E6D7C3]/30;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
   }
 }
