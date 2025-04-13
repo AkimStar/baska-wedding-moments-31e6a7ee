@@ -1,3 +1,4 @@
+
 import React from 'react';
 const About = () => {
   return <section id="about" className="section-padding">
@@ -6,7 +7,7 @@ const About = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden rounded-lg shadow-md hover-lift">
-            <img alt="Baska Production Team" className="w-full h-full object-cover rounded-lg" src="https://i.ibb.co/Kz3CvBFM/about-image.jpg" />
+            <img alt="Baska Production Team" className="w-full h-full object-cover rounded-lg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />
           </div>
           
           <div className="space-y-6 champagne-card p-8 rounded-lg">
