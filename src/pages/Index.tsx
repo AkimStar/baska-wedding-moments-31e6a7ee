@@ -7,6 +7,7 @@ import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Restaurant from '../components/Restaurant';
+import Limousine from '../components/Limousine';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
         <Gallery />
         <Testimonials />
         <Restaurant />
+        <Limousine />
         <Contact />
         <Footer />
       </div>
