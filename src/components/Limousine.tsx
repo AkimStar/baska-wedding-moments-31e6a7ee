@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CalendarCheck } from 'lucide-react';
@@ -42,7 +41,6 @@ const Limousine = () => {
           
           {/* Right side - Limousine image with enhanced presentation */}
           <div className="relative h-[450px] overflow-hidden rounded-2xl shadow-xl group transform transition-all duration-700 hover:-translate-x-2">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
             <img 
               alt="Бяла лимузина под наем" 
               className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105" 
