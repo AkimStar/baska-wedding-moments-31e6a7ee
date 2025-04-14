@@ -4,12 +4,6 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, Globe, Moon, Sun } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
 
@@ -45,6 +39,11 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Toggle between Bulgarian and English
+  const toggleLanguage = () => {
+    setLanguage(language === 'bg' ? 'en' : 'bg');
   };
 
   const menuItems = [
@@ -109,32 +108,21 @@ const Navbar = () => {
         {/* Language and Dark Mode Toggles */}
         <div className="hidden md:flex items-center ml-6 space-x-2">
           {/* Language Toggle */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className={cn(
-                  theme === "dark"
-                    ? "text-white/80 hover:text-white hover:bg-white/10"
-                    : scrolled
-                      ? "text-black/80 hover:text-black hover:bg-black/10"
-                      : "text-white/90 hover:text-white hover:bg-white/20"
-                )}
-              >
-                <Globe className="h-[1.2rem] w-[1.2rem]" />
-                <span className="sr-only">{t("Език")}</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setLanguage('bg')}>
-                {language === 'bg' && '✓ '}Bulgarian
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setLanguage('en')}>
-                {language === 'en' && '✓ '}English
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className={cn(
+              theme === "dark"
+                ? "text-white/80 hover:text-white hover:bg-white/10"
+                : scrolled
+                  ? "text-black/80 hover:text-black hover:bg-black/10"
+                  : "text-white/90 hover:text-white hover:bg-white/20"
+            )}
+            onClick={toggleLanguage}
+          >
+            <Globe className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">{language === 'bg' ? 'Switch to English' : 'Превключи на български'}</span>
+          </Button>
           
           {/* Dark Mode Toggle */}
           <Toggle 
@@ -171,7 +159,7 @@ const Navbar = () => {
                   ? "text-black/80 hover:text-black hover:bg-black/10"
                   : "text-white/90 hover:text-white hover:bg-white/20"
             )}
-            onClick={() => setLanguage(language === 'bg' ? 'en' : 'bg')}
+            onClick={toggleLanguage}
           >
             <Globe className="h-[1.2rem] w-[1.2rem]" />
           </Button>

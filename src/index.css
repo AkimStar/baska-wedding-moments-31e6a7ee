@@ -77,20 +77,19 @@
   }
 
   body {
-    @apply text-foreground font-inter overflow-x-hidden;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  
-  body {
-    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .dark body {
     background: linear-gradient(to bottom, #1A1F2C, #221F26, #403E43);
+    color: theme('colors.gray.100');
   }
 
   body:not(.dark) {
     background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3);
+    color: theme('colors.gray.900');
   }
   
   .hero-overlay {
@@ -166,6 +165,11 @@
   
   .hover-lift {
     @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md;
+  }
+
+  /* Enhanced transitions */
+  .theme-transition {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
   }
 }
 
