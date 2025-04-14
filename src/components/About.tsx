@@ -1,9 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
-  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -42,7 +40,7 @@ const About = () => {
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-16 text-gray-800 about-animate">
           <span className="relative inline-block">
-            {t("Запознай се с Баска Продъкшън")}
+            Запознай се с Баска Продъкшън
             <span className="absolute -bottom-2 left-1/2 w-24 h-1 bg-gradient-to-r from-[#E6D7C3] to-transparent transform -translate-x-1/2"></span>
           </span>
         </h2>
@@ -59,19 +57,19 @@ const About = () => {
           
           <div className="space-y-6 champagne-card p-8 rounded-2xl shadow-lg about-animate backdrop-blur-sm">
             <p className="text-lg leading-relaxed text-gray-700">
-              {t("С повече от")} <span className="font-semibold">10 {t("години опит")}</span> {t("в заснемането на любовни истории, нашата мисия е да уловим най-съкровените моменти от вашия специален ден по естествен и дискретен начин.")}
+              С повече от <span className="font-semibold">10 години опит</span> в заснемането на любовни истории, нашата мисия е да уловим най-съкровените моменти от вашия специален ден по естествен и дискретен начин.
             </p>
             
             <div className="w-16 h-0.5 bg-gradient-to-r from-[#E6D7C3] to-transparent"></div>
             
             <p className="text-lg leading-relaxed text-gray-700">
-              {t("Нашият стил е")} <span className="italic">{t("естествен, романтичен и ненатрапчив")}</span>. {t("Вярваме, че най-красивите снимки са тези, които улавят истинските емоции, спонтанните жестове и неподправената радост от деня на вашата сватба.")}
+              Нашият стил е <span className="italic">естествен, романтичен и ненатрапчив</span>. Вярваме, че най-красивите снимки са тези, които улавят истинските емоции, спонтанните жестове и неподправената радост от деня на вашата сватба.
             </p>
             
             <div className="w-16 h-0.5 bg-gradient-to-r from-[#E6D7C3] to-transparent"></div>
             
             <p className="text-lg leading-relaxed text-gray-700">
-              {t("Фокусираме се върху това да преживеете пълноценно всеки момент")} {t("от вашия специален ден, докато ние тихо записваме историята ви, готова да бъде преживявана отново и отново през годините.")}
+              Фокусираме се върху това да преживеете пълноценно всеки момент от вашия специален ден, докато ние тихо записваме историята ви, готова да бъде преживявана отново и отново през годините.
             </p>
           </div>
         </div>
