@@ -14,31 +14,41 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
-
-  // Initialize theme from localStorage or system preference
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Initialize theme from localStorage or system preference
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     if (savedTheme) {
-      setTheme(savedTheme);
+      return savedTheme;
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
+      return 'dark';
     }
-  }, []);
+    return 'light';
+  });
 
   // Update document when theme changes
   useEffect(() => {
     const root = window.document.documentElement;
+    const body = document.body;
     
+    // Apply theme classes to both html and body
     if (theme === 'dark') {
       root.classList.add('dark');
-      document.body.classList.add('dark');
+      body.classList.add('dark');
     } else {
       root.classList.remove('dark');
-      document.body.classList.remove('dark');
+      body.classList.remove('dark');
     }
     
+    // Store theme preference in localStorage
     localStorage.setItem('theme', theme);
+    
+    // Force re-render of components by adding and removing a class
+    document.documentElement.classList.add('theme-transition');
+    setTimeout(() => {
+      document.documentElement.classList.remove('theme-transition');
+    }, 50);
+    
+    console.log(`Theme changed to: ${theme}`);
   }, [theme]);
 
   const toggleTheme = () => {

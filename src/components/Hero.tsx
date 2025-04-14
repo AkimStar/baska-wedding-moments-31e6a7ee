@@ -2,8 +2,11 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -34,7 +37,7 @@ const Hero = () => {
       <div className="absolute inset-0" id="hero-background">
         <img
           src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&q=80&ixlib=rb-4.0.3"
-          alt="Wedding couple by the sea"
+          alt={t("Сватбена двойка в градина")}
           className="w-full h-full object-cover md:object-[center_25%]"
         />
         {/* Gradient overlay for better text readability */}
@@ -45,19 +48,19 @@ const Hero = () => {
       <div className="relative container mx-auto px-6 h-screen flex flex-col justify-center items-center text-center text-white">
         <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            BASKA<br />
-            PRODUCTION
+            {t("BASKA")}<br />
+            {t("PRODUCTION")}
           </h1>
         </div>
         
         <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-          <p className="text-xl md:text-2xl mb-4 font-light">Сватбен фотограф</p>
+          <p className="text-xl md:text-2xl mb-4 font-light">{t("Сватбен фотограф")}</p>
         </div>
         
         <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
           <p className="text-lg md:text-xl mb-12 max-w-2xl">
-            Улавяме Вашите мечтани сватбени моменти със<br />
-            сърце и душа
+            {t("Улавяме Вашите мечтани сватбени моменти със")}<br />
+            {t("сърце и душа")}
           </p>
         </div>
         
@@ -66,7 +69,7 @@ const Hero = () => {
             onClick={() => scrollToSection('about')} 
             className="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-full backdrop-blur-sm transition-all duration-300 border border-white/30 transform hover:-translate-y-1"
           >
-            ВИЖТЕ ПОВЕЧЕ
+            {t("ВИЖТЕ ПОВЕЧЕ")}
           </button>
         </div>
       </div>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, Globe, Moon, Sun } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Button } from "@/components/ui/button";
 import { Toggle } from "@/components/ui/toggle";
@@ -41,9 +41,10 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Toggle between Bulgarian and English
-  const toggleLanguage = () => {
-    setLanguage(language === 'bg' ? 'en' : 'bg');
+  // Toggle language with a single click
+  const handleLanguageToggle = () => {
+    const newLanguage: Language = language === 'bg' ? 'en' : 'bg';
+    setLanguage(newLanguage);
   };
 
   const menuItems = [
@@ -107,10 +108,11 @@ const Navbar = () => {
         
         {/* Language and Dark Mode Toggles */}
         <div className="hidden md:flex items-center ml-6 space-x-2">
-          {/* Language Toggle */}
+          {/* Language Toggle - Modified for single click */}
           <Button 
             variant="ghost" 
             size="icon"
+            onClick={handleLanguageToggle}
             className={cn(
               theme === "dark"
                 ? "text-white/80 hover:text-white hover:bg-white/10"
@@ -118,10 +120,10 @@ const Navbar = () => {
                   ? "text-black/80 hover:text-black hover:bg-black/10"
                   : "text-white/90 hover:text-white hover:bg-white/20"
             )}
-            onClick={toggleLanguage}
           >
             <Globe className="h-[1.2rem] w-[1.2rem]" />
             <span className="sr-only">{language === 'bg' ? 'Switch to English' : 'Превключи на български'}</span>
+            <span className="ml-1 text-xs font-bold">{language.toUpperCase()}</span>
           </Button>
           
           {/* Dark Mode Toggle */}
@@ -152,6 +154,7 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             size="icon"
+            onClick={handleLanguageToggle}
             className={cn(
               theme === "dark"
                 ? "text-white/80 hover:text-white hover:bg-white/10"
@@ -159,9 +162,9 @@ const Navbar = () => {
                   ? "text-black/80 hover:text-black hover:bg-black/10"
                   : "text-white/90 hover:text-white hover:bg-white/20"
             )}
-            onClick={toggleLanguage}
           >
             <Globe className="h-[1.2rem] w-[1.2rem]" />
+            <span className="ml-0.5 text-xs font-bold">{language.toUpperCase()}</span>
           </Button>
           
           {/* Mobile Dark Mode Toggle */}
