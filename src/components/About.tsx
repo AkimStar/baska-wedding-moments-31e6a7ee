@@ -70,7 +70,7 @@ const About = () => {
             <div className="w-16 h-0.5 bg-gradient-to-r from-[#E6D7C3] to-transparent"></div>
             
             <p className="text-lg leading-relaxed text-gray-700">
-              Фокусираме се върху това да преживеете пълноценно всеки момент от вашия специален ден, докато ние тихо записваме историята ви, готова да бъде преживявана отново и отново през годините.
+              {t('about_paragraph3')}
             </p>
           </div>
         </div>
