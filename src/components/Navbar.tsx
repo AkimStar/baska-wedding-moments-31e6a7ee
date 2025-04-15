@@ -108,8 +108,8 @@ const Navbar = () => {
           <button
             onClick={toggleLanguage}
             className={cn(
-              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-              language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white'
+              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+              scrolled ? 'text-black dark:text-white' : 'text-white'
             )}
             aria-label="Toggle language"
           >
@@ -119,8 +119,7 @@ const Navbar = () => {
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(
-              "ml-auto mr-4 p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-              theme === 'dark' ? 'dark-glass btn-glow' : ''
+              "ml-auto mr-4 p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50"
             )}
             pressed={theme === 'dark'}
             onPressedChange={toggleTheme}
@@ -186,12 +185,12 @@ const Navbar = () => {
               )} />
             </button>
             {/* Mobile-only language and theme toggles at the top left */}
-            <div className="absolute top-6 left-6 flex flex-row items-center space-x-4 z-50">
+            <div className="absolute top-8 left-6 flex flex-row items-center space-x-4 z-50">
               <button
                 onClick={toggleLanguage}
                 className={cn(
-                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-                  language === 'bg' ? 'text-white dark:text-white' : 'text-white dark:text-white'
+                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+                  scrolled ? 'text-black dark:text-white' : 'text-white'
                 )}
                 aria-label="Toggle language"
               >
@@ -200,8 +199,7 @@ const Navbar = () => {
               <Toggle 
                 aria-label="Toggle dark mode" 
                 className={cn(
-                  "p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-                  theme === 'dark' ? 'dark-glass btn-glow' : ''
+                  "p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50"
                 )}
                 pressed={theme === 'dark'}
                 onPressedChange={toggleTheme}
