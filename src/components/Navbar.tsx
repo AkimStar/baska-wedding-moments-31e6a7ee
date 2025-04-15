@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronRight, Moon, Sun } from 'lucide-react';
+import { Menu, X, ChevronRight, Moon, Sun, Sparkles } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import { Toggle } from '@/components/ui/toggle';
 
@@ -53,7 +53,7 @@ const Navbar = () => {
       className={cn(
         "fixed w-full z-50 transition-all duration-500 px-6 py-4",
         scrolled 
-          ? "bg-gradient-to-r from-[#F9F4EC]/90 to-[#F0E6D8]/90 shadow-md backdrop-blur-md dark:from-[#1A1F2C]/90 dark:to-[#221F26]/90 dark:shadow-black/10" 
+          ? "bg-gradient-to-r from-[#F9F4EC]/90 to-[#F0E6D8]/90 shadow-md backdrop-blur-md dark:from-[#0A0B0F]/90 dark:to-[#121418]/90 dark:shadow-black/20" 
           : "bg-transparent"
       )}
     >
@@ -89,29 +89,39 @@ const Navbar = () => {
           ))}
         </div>
         
-        {/* Theme toggle button */}
+        {/* Theme toggle button with improved animation */}
         <div className="flex items-center">
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(
-              "ml-auto mr-4 p-2 rounded-full transition-all duration-300",
+              "ml-auto mr-4 p-2 rounded-full transition-all duration-300 relative overflow-hidden",
               scrolled 
                 ? "bg-transparent hover:bg-black/10 dark:hover:bg-white/10" 
-                : "bg-transparent hover:bg-white/20"
+                : "bg-transparent hover:bg-white/20",
+              theme === 'dark' ? 'dark-glass btn-glow' : ''
             )}
             pressed={theme === 'dark'}
             onPressedChange={toggleTheme}
           >
             {theme === 'dark' ? (
-              <Sun className={cn(
-                "w-5 h-5 transition-all duration-300 animate-scale-in",
-                scrolled ? "text-white" : "text-white"
-              )} />
+              <div className="relative">
+                <Sun className={cn(
+                  "w-5 h-5 transition-all duration-300 animate-scale-in",
+                  scrolled ? "text-white" : "text-white"
+                )} />
+                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-white/70 animate-pulse"></span>
+              </div>
             ) : (
-              <Moon className={cn(
-                "w-5 h-5 transition-all duration-300 animate-scale-in",
-                scrolled ? "text-black" : "text-white"
-              )} />
+              <div className="relative">
+                <Moon className={cn(
+                  "w-5 h-5 transition-all duration-300 animate-scale-in",
+                  scrolled ? "text-black" : "text-white"
+                )} />
+                <Sparkles className={cn(
+                  "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
+                  scrolled ? "text-black/70" : "text-white/70"
+                )} />
+              </div>
             )}
           </Toggle>
 
@@ -134,9 +144,12 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu with improved dark mode styling */}
             <div className={cn(
-              "fixed inset-0 bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 dark:from-[#1A1F2C]/95 dark:to-[#221F26]/95 z-40 transform transition-all duration-500 ease-in-out backdrop-blur-lg",
+              "fixed inset-0 z-40 transform transition-all duration-500 ease-in-out backdrop-blur-lg",
+              theme === 'dark' 
+                ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
+                : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95",
               isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             )}>
               <div className="flex flex-col items-center justify-center h-full space-y-8">
@@ -144,7 +157,10 @@ const Navbar = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-300 flex items-center group"
+                    className={cn(
+                      "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-300 flex items-center group",
+                      theme === 'dark' ? 'glow-text' : ''
+                    )}
                   >
                     <span>{item.name}</span>
                     <ChevronRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />

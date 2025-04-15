@@ -78,14 +78,29 @@
   }
 
   body {
-    @apply text-foreground font-inter overflow-x-hidden transition-colors duration-300;
+    @apply text-foreground font-inter overflow-x-hidden transition-colors duration-500;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Light mode body styles */
+  body {
     background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3); /* Enhanced champagne gradient */
   }
   
+  /* Dark mode body styles */
   .dark body {
-    background: linear-gradient(to bottom, #121418, #171820, #161616); /* Darker mode gradient */
-    color: #f1f1f1;
+    background: linear-gradient(to bottom, #0A0B0F, #121418, #13131A); /* Enhanced darker mode gradient */
+    color: #f5f5f5;
+  }
+  
+  /* Theme transition effect */
+  .theme-transitioning * {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                border-color 0.5s ease, 
+                box-shadow 0.5s ease, 
+                opacity 0.5s ease,
+                transform 0.5s ease;
   }
   
   .hero-overlay {
@@ -115,7 +130,7 @@
   .btn-primary {
     @apply px-6 py-3 bg-white text-black uppercase text-sm tracking-wider font-medium 
            hover:bg-[#F9F6F2] transition-colors duration-300 inline-block
-           dark:bg-[#333333] dark:text-white dark:hover:bg-[#444444];
+           dark:bg-[#222222] dark:text-white dark:hover:bg-[#333333];
   }
   
   .gallery-item {
@@ -132,33 +147,50 @@
   
   .testimonial-card {
     @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#E6D7C3]/50
-           dark:bg-[#121418]/80 dark:border-[#222]/50 dark:shadow-black/10 dark:text-white;
+           dark:bg-[#121418]/80 dark:border-[#2A2A35]/50 dark:shadow-black/20 dark:text-white;
   }
   
   .footer {
-    @apply bg-[#F9F4EC] text-black py-10 dark:bg-[#121418] dark:text-white;
+    @apply bg-[#F9F4EC] text-black py-10 dark:bg-[#0A0B0F] dark:text-white;
   }
 
   /* Enhanced gradient styles */
   .champagne-card {
     @apply bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3] border border-[#E6D7C3]/30 shadow-sm
-           dark:from-[#121418] dark:to-[#161616] dark:border-[#222]/30 dark:shadow-black/10 dark:text-white;
+           dark:from-[#13131A] dark:to-[#0F0F14] dark:border-[#2A2A35]/30 dark:shadow-black/20 dark:text-white;
   }
   
   .champagne-button {
     @apply bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] hover:from-[#E6D7C3] hover:to-[#F9F4EC] text-black/80 
            border border-[#E6D7C3] transition-all duration-300
-           dark:from-[#222] dark:to-[#161616] dark:hover:from-[#161616] dark:hover:to-[#222] 
-           dark:text-white/90 dark:border-[#333];
+           dark:from-[#222233] dark:to-[#1A1A25] dark:hover:from-[#1A1A25] dark:hover:to-[#222233] 
+           dark:text-white/90 dark:border-[#2A2A35];
   }
   
   .glass-effect {
     @apply bg-white/40 backdrop-blur-sm border border-white/30 shadow-sm
-           dark:bg-black/40 dark:border-white/10;
+           dark:bg-black/40 dark:border-white/10 dark:shadow-black/30;
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md dark:hover:shadow-black/30;
+    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md dark:hover:shadow-[#000000]/30;
+  }
+  
+  /* Dark mode specific glow effects */
+  .dark .glow-text {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  }
+  
+  .dark .glow-border {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.07);
+  }
+  
+  .dark .glow-card {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.05) inset;
+  }
+  
+  .dark .neo-button {
+    @apply bg-[#13131A] border border-[#2A2A35]/50 shadow-[0_4px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.05)_inset];
   }
 }
 
@@ -252,7 +284,7 @@
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#E6D7C3]/30 dark:hover:shadow-black/30;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#E6D7C3]/30 dark:hover:shadow-[#2A2A35]/40;
   }
   
   .text-shadow {
@@ -262,46 +294,47 @@
   .text-glow {
     text-shadow: 0 0 10px rgba(255,255,255,0.5);
   }
-
-  /* Dark mode specific overrides */
+  
+  /* Dark mode improved text contrast fixes */
   .dark .text-gray-700 {
-    color: #e0e0e0;
+    color: #e6e6e6;
   }
   
   .dark .text-gray-600 {
-    color: #d0d0d0;
+    color: #d6d6d6;
   }
   
   .dark .text-gray-800 {
-    color: #f1f1f1;
+    color: #f5f5f5;
   }
   
   .dark .bg-white\/60, .dark .bg-white\/80, .dark .bg-white\/40 {
-    background-color: rgba(18, 20, 24, 0.6);
+    background-color: rgba(13, 13, 20, 0.7); /* Deeper, richer dark background */
   }
   
   .dark section {
-    color: #f1f1f1;
+    color: #f5f5f5;
   }
   
   /* Restaurant section specific dark mode fixes */
   .dark #restaurant {
-    background: linear-gradient(to bottom, #121418, #171820);
+    background: linear-gradient(to bottom, #0A0B0F, #121418);
   }
   
   .dark #restaurant .bg-gradient-to-b {
-    background: linear-gradient(to bottom, #121418, #161616);
+    background: linear-gradient(to bottom, #0A0B0F, #121418);
   }
   
   .dark #restaurant .card {
-    background-color: rgba(18, 20, 24, 0.6);
-    border-color: rgba(51, 51, 51, 0.3);
+    background-color: rgba(19, 19, 26, 0.8);
+    border-color: rgba(42, 42, 53, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
   
   .dark #restaurant .text-gray-700,
   .dark #restaurant .text-gray-800,
   .dark #restaurant .text-sm {
-    color: #e0e0e0;
+    color: #e6e6e6;
   }
   
   /* Fix for bounce animation */
@@ -316,5 +349,23 @@
     50% {
       transform: translateY(-10px);
     }
+  }
+  
+  /* New glass morphism dark mode style */
+  .dark .dark-glass {
+    background: rgba(13, 13, 20, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Dark mode button glow effect */
+  .dark .btn-glow {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .dark .btn-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
   }
 }

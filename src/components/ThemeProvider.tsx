@@ -12,6 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
@@ -35,12 +36,20 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [theme]);
 
   const toggleTheme = () => {
+    setIsTransitioning(true);
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    
+    // Reset the transition state after animation completes
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 500); // Match this with your CSS transition duration
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <div className={isTransitioning ? 'theme-transitioning' : ''}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 };
