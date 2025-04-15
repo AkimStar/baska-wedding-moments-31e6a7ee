@@ -147,7 +147,7 @@ const Navbar = () => {
               "fixed inset-0 z-40 transform transition-all duration-500 ease-in-out backdrop-blur-lg",
               theme === 'dark' 
                 ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
-                : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95",
+                : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
               isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             )}>
               <div className="flex flex-col items-center justify-center h-full space-y-8">
