@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12">
+    <footer className="py-12 bg-[#F9F4EC] dark:bg-[#121418] transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">
@@ -22,7 +22,7 @@ const Footer = () => {
               alt="Baska Production Logo" 
               className="h-16 w-auto mb-3" 
             />
-            <p className="text-sm text-gray-600 dark:text-gray-400">Сватбен фотограф</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Сватбен фотограф</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
@@ -51,15 +51,15 @@ const Footer = () => {
               <button 
                 key={item.id} 
                 onClick={() => scrollToSection(item.id)} 
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover-lift dark:text-gray-400 dark:hover:text-white"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover-lift dark:text-gray-300 dark:hover:text-white"
               >
                 {item.name}
               </button>
             )}
           </div>
           
-          <div className="w-full max-w-lg mx-auto border-t border-[#E6D7C3] dark:border-gray-800 pt-6">
-            <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+          <div className="w-full max-w-lg mx-auto border-t border-[#E6D7C3] dark:border-[#333] pt-6">
+            <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
               © 2025 Baska Production. Всички права запазени.
             </p>
           </div>

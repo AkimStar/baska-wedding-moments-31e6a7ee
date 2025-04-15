@@ -83,8 +83,9 @@
     background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3); /* Enhanced champagne gradient */
   }
   
-  body.dark {
-    background: linear-gradient(to bottom, #1A1F2C, #221F26, #222222); /* Dark mode gradient */
+  .dark body {
+    background: linear-gradient(to bottom, #121418, #171820, #161616); /* Darker mode gradient */
+    color: #f1f1f1;
   }
   
   .hero-overlay {
@@ -131,24 +132,24 @@
   
   .testimonial-card {
     @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#E6D7C3]/50
-           dark:bg-[#1A1F2C]/80 dark:border-[#333333]/50 dark:shadow-black/10;
+           dark:bg-[#121418]/80 dark:border-[#222]/50 dark:shadow-black/10 dark:text-white;
   }
   
   .footer {
-    @apply bg-[#F9F4EC] text-black py-10 dark:bg-[#1A1F2C] dark:text-white;
+    @apply bg-[#F9F4EC] text-black py-10 dark:bg-[#121418] dark:text-white;
   }
 
   /* Enhanced gradient styles */
   .champagne-card {
     @apply bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3] border border-[#E6D7C3]/30 shadow-sm
-           dark:from-[#1A1F2C] dark:to-[#222222] dark:border-[#333333]/30 dark:shadow-black/10;
+           dark:from-[#121418] dark:to-[#161616] dark:border-[#222]/30 dark:shadow-black/10 dark:text-white;
   }
   
   .champagne-button {
     @apply bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] hover:from-[#E6D7C3] hover:to-[#F9F4EC] text-black/80 
            border border-[#E6D7C3] transition-all duration-300
-           dark:from-[#333333] dark:to-[#222222] dark:hover:from-[#222222] dark:hover:to-[#333333] 
-           dark:text-white/80 dark:border-[#444444];
+           dark:from-[#222] dark:to-[#161616] dark:hover:from-[#161616] dark:hover:to-[#222] 
+           dark:text-white/90 dark:border-[#333];
   }
   
   .glass-effect {
@@ -260,5 +261,60 @@
   
   .text-glow {
     text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  }
+
+  /* Dark mode specific overrides */
+  .dark .text-gray-700 {
+    color: #e0e0e0;
+  }
+  
+  .dark .text-gray-600 {
+    color: #d0d0d0;
+  }
+  
+  .dark .text-gray-800 {
+    color: #f1f1f1;
+  }
+  
+  .dark .bg-white\/60, .dark .bg-white\/80, .dark .bg-white\/40 {
+    background-color: rgba(18, 20, 24, 0.6);
+  }
+  
+  .dark section {
+    color: #f1f1f1;
+  }
+  
+  /* Restaurant section specific dark mode fixes */
+  .dark #restaurant {
+    background: linear-gradient(to bottom, #121418, #171820);
+  }
+  
+  .dark #restaurant .bg-gradient-to-b {
+    background: linear-gradient(to bottom, #121418, #161616);
+  }
+  
+  .dark #restaurant .card {
+    background-color: rgba(18, 20, 24, 0.6);
+    border-color: rgba(51, 51, 51, 0.3);
+  }
+  
+  .dark #restaurant .text-gray-700,
+  .dark #restaurant .text-gray-800,
+  .dark #restaurant .text-sm {
+    color: #e0e0e0;
+  }
+  
+  /* Fix for bounce animation */
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }
