@@ -67,6 +67,10 @@ export default {
 				blush: '#FFEEF2',
 				champagne: '#F9F5F0',
 				offwhite: '#F8F8F8',
+				// Dark mode custom colors
+				darkBg: '#1A1F2C',
+				darkBg2: '#221F26',
+				darkBg3: '#222222',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -101,6 +105,14 @@ export default {
 				'zoom-in': {
 					'0%': { transform: 'scale(1)' },
 					'100%': { transform: 'scale(1.05)' }
+				},
+				'scale-in': {
+					'0%': { transform: 'scale(0.8)', opacity: '0' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'rotate-in': {
+					'0%': { transform: 'rotate(-45deg)', opacity: '0' },
+					'100%': { transform: 'rotate(0)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -108,7 +120,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-in-up': 'fade-in-up 0.7s ease-out forwards',
-				'zoom-in': 'zoom-in 0.3s ease-out forwards'
+				'zoom-in': 'zoom-in 0.3s ease-out forwards',
+				'scale-in': 'scale-in 0.3s ease-out forwards',
+				'rotate-in': 'rotate-in 0.3s ease-out forwards'
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],

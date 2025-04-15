@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
-      <div className="bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3]">
+      <div className="bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3] dark:from-[#1A1F2C] dark:via-[#221F26] dark:to-[#222222]">
         <About />
         <Gallery />
         <Testimonials />
@@ -28,7 +28,7 @@ const Index = () => {
       </div>
       
       {/* Animated cursor effect */}
-      <div id="cursor-fx" className="fixed w-8 h-8 rounded-full border border-black/20 pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 hidden md:block" style={{
+      <div id="cursor-fx" className="fixed w-8 h-8 rounded-full border border-black/20 dark:border-white/20 pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 hidden md:block" style={{
         transform: 'translate(-50%, -50%)',
         transition: 'transform 0.1s ease-out, width 0.2s ease-out, height 0.2s ease-out, opacity 0.2s ease-out',
         mixBlendMode: 'difference'
@@ -59,13 +59,13 @@ const Index = () => {
               el.addEventListener('mouseenter', () => {
                 cursor.style.width = '32px';
                 cursor.style.height = '32px';
-                cursor.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                cursor.style.borderColor = document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.2)';
               });
               
               el.addEventListener('mouseleave', () => {
                 cursor.style.width = '24px';
                 cursor.style.height = '24px';
-                cursor.style.borderColor = 'rgba(0, 0, 0, 0.2)';
+                cursor.style.borderColor = document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)';
               });
             });
             

@@ -37,6 +37,36 @@
 
     --radius: 0.5rem;
   }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
 
   * {
     @apply border-border;
@@ -44,13 +74,17 @@
 
   html {
     scroll-behavior: smooth;
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden transition-colors duration-300;
   }
 
   body {
-    @apply text-foreground font-inter overflow-x-hidden;
+    @apply text-foreground font-inter overflow-x-hidden transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     background: linear-gradient(to bottom, #F9F4EC, #F0E6D8, #E6D7C3); /* Enhanced champagne gradient */
+  }
+  
+  body.dark {
+    background: linear-gradient(to bottom, #1A1F2C, #221F26, #222222); /* Dark mode gradient */
   }
   
   .hero-overlay {
@@ -74,12 +108,13 @@
   }
   
   .navbar-link {
-    @apply uppercase text-sm tracking-wider hover:text-black transition-colors;
+    @apply uppercase text-sm tracking-wider hover:text-black dark:hover:text-white transition-colors;
   }
   
   .btn-primary {
     @apply px-6 py-3 bg-white text-black uppercase text-sm tracking-wider font-medium 
-           hover:bg-[#F9F6F2] transition-colors duration-300 inline-block;
+           hover:bg-[#F9F6F2] transition-colors duration-300 inline-block
+           dark:bg-[#333333] dark:text-white dark:hover:bg-[#444444];
   }
   
   .gallery-item {
@@ -95,29 +130,34 @@
   }
   
   .testimonial-card {
-    @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#E6D7C3]/50;
+    @apply bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-lg shadow-sm border border-[#E6D7C3]/50
+           dark:bg-[#1A1F2C]/80 dark:border-[#333333]/50 dark:shadow-black/10;
   }
   
   .footer {
-    @apply bg-[#F9F4EC] text-black py-10;
+    @apply bg-[#F9F4EC] text-black py-10 dark:bg-[#1A1F2C] dark:text-white;
   }
 
   /* Enhanced gradient styles */
   .champagne-card {
-    @apply bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3] border border-[#E6D7C3]/30 shadow-sm;
+    @apply bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3] border border-[#E6D7C3]/30 shadow-sm
+           dark:from-[#1A1F2C] dark:to-[#222222] dark:border-[#333333]/30 dark:shadow-black/10;
   }
   
   .champagne-button {
     @apply bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] hover:from-[#E6D7C3] hover:to-[#F9F4EC] text-black/80 
-           border border-[#E6D7C3] transition-all duration-300;
+           border border-[#E6D7C3] transition-all duration-300
+           dark:from-[#333333] dark:to-[#222222] dark:hover:from-[#222222] dark:hover:to-[#333333] 
+           dark:text-white/80 dark:border-[#444444];
   }
   
   .glass-effect {
-    @apply bg-white/40 backdrop-blur-sm border border-white/30 shadow-sm;
+    @apply bg-white/40 backdrop-blur-sm border border-white/30 shadow-sm
+           dark:bg-black/40 dark:border-white/10;
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md;
+    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-md dark:hover:shadow-black/30;
   }
 }
 
@@ -211,7 +251,7 @@
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#E6D7C3]/30;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#E6D7C3]/30 dark:hover:shadow-black/30;
   }
   
   .text-shadow {
