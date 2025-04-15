@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, Moon, Sun, Sparkles } from 'lucide-react';
@@ -109,7 +108,6 @@ const Navbar = () => {
                   "w-5 h-5 transition-all duration-300 animate-scale-in",
                   scrolled ? "text-white" : "text-white"
                 )} />
-                <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-white/70 animate-pulse"></span>
               </div>
             ) : (
               <div className="relative">
