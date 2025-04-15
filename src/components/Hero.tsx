@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -70,7 +71,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 inset-x-0 flex justify-center z-10">
+      <div className="absolute bottom-10 inset-x-0 flex justify-center animate-bounce z-10">
         <div className="w-12 h-16 rounded-full border-2 border-white/70 flex items-center justify-center backdrop-blur-sm">
           <ArrowDown className="w-4 h-4 text-white/70" />
         </div>

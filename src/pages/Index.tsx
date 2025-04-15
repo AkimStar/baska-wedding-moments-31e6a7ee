@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -11,34 +11,7 @@ import Limousine from '../components/Limousine';
 import Footer from '../components/Footer';
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Scroll to top on page load
-    window.scrollTo(0, 0);
-    
-    // Simulate page loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-b from-[#F9F4EC] to-[#E6D7C3]">
-        <div className="text-center">
-          <img 
-            src="/logo.png" 
-            alt="Baska Production Logo" 
-            className="h-24 w-auto mx-auto animate-pulse" 
-          />
-          <p className="mt-4 text-gray-800 animate-pulse">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // Removed loading state and related code
 
   return (
     <div className="min-h-screen overflow-x-hidden">
