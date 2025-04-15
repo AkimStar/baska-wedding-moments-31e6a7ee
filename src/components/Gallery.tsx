@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
+import { useLanguage } from './LanguageProvider';
 
 // Sample gallery items - in a real app these would come from a CMS or API
 const galleryItems = [
@@ -59,17 +60,18 @@ const galleryItems = [
   }
 ];
 
-const categories = [
-  { id: "all", name: "Всички" },
-  { id: "outdoor", name: "На открито" },
-  { id: "intimate", name: "Интимни" },
-  { id: "city", name: "Градски" },
-  { id: "mountain", name: "Планински" }
-];
-
 const Gallery = () => {
+  const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const categories = [
+    { id: "all", name: t("gallery_all") },
+    { id: "outdoor", name: t("gallery_outdoor") },
+    { id: "intimate", name: t("gallery_intimate") },
+    { id: "city", name: t("gallery_city") },
+    { id: "mountain", name: t("gallery_mountain") }
+  ];
 
   const filteredImages = galleryItems.filter(item => 
     item.categories.includes(activeCategory)
@@ -109,7 +111,7 @@ const Gallery = () => {
   return (
     <section id="gallery" className="section-padding bg-white/60 backdrop-blur-sm dark:bg-black/40">
       <div className="container mx-auto px-6">
-        <h2 className="heading-2 text-center mb-10">Магията в кадри</h2>
+        <h2 className="heading-2 text-center mb-10">{t('gallery_title')}</h2>
         
         {/* Category filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">

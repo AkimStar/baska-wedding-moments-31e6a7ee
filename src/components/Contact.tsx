@@ -2,10 +2,12 @@ import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useLanguage } from './LanguageProvider';
 const Contact = () => {
+  const { t } = useLanguage();
   return <section id="contact" className="section-padding">
       <div className="container mx-auto px-6">
-        <h2 className="heading-2 text-center mb-8 text-gray-800">Нека създадем магия</h2>
+        <h2 className="heading-2 text-center mb-8 text-gray-800">{t('contact_title')}</h2>
         <p className="text-center text-gray-700 max-w-2xl mx-auto mb-12">
           Искате да запечатаме вашите специални моменти? Свържете се с нас, за да обсъдим детайлите и да създадем вашата сватбена история.
         </p>
@@ -13,7 +15,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="text-center">
             <Mail className="w-6 h-6 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Имейл</h3>
+            <h3 className="text-lg font-semibold mb-2">{t('contact_email')}</h3>
             <p className="text-gray-700 mb-2">Пишете ни по всяко време</p>
             <a 
               href="mailto:djanbasri@abv.bg" 
@@ -25,7 +27,7 @@ const Contact = () => {
 
           <div className="text-center">
             <Phone className="w-6 h-6 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Телефон</h3>
+            <h3 className="text-lg font-semibold mb-2">{t('contact_name')}</h3>
             <p className="text-gray-700 mb-2">На линия сме всеки ден</p>
             <a 
               href="tel:+359897660627" 

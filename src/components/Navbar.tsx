@@ -3,11 +3,13 @@ import { cn } from "@/lib/utils";
 import { Menu, X, ChevronRight, Moon, Sun, Sparkles } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import { Toggle } from '@/components/ui/toggle';
+import { useLanguage } from './LanguageProvider';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { language, toggleLanguage, t } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -50,13 +52,13 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "НАЧАЛО", id: "home" },
-    { name: "ЗА МЕН", id: "about" },
-    { name: "ГАЛЕРИЯ", id: "gallery" },
-    { name: "ОТЗИВИ", id: "testimonials" },
-    { name: "РЕСТОРАНТ", id: "restaurant" },
-    { name: "ЛИМУЗИНА", id: "limousine" },
-    { name: "КОНТАКТИ", id: "contact" }
+    { name: t("nav_home"), id: "home" },
+    { name: t("nav_about"), id: "about" },
+    { name: t("nav_gallery"), id: "gallery" },
+    { name: t("nav_testimonials"), id: "testimonials" },
+    { name: t("nav_restaurant"), id: "restaurant" },
+    { name: t("nav_limousine"), id: "limousine" },
+    { name: t("nav_contact"), id: "contact" }
   ];
 
   return (
@@ -100,8 +102,21 @@ const Navbar = () => {
           ))}
         </div>
         
-        {/* Theme toggle button with improved animation */}
-        <div className="flex items-center">
+        {/* Theme and Language toggle buttons */}
+        <div className="flex items-center space-x-2">
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className={cn(
+              "ml-auto mr-2 px-3 py-2 rounded-full border border-transparent bg-white/70 dark:bg-black/40 text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-[#f8f1e7] dark:hover:bg-[#23262e] focus:outline-none focus:ring-2 focus:ring-accent/50",
+              language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white',
+              "shadow-sm"
+            )}
+            aria-label="Toggle language"
+          >
+            <span className="transition-opacity duration-200">{language === 'bg' ? 'BG' : 'EN'}</span>
+          </button>
+          {/* Theme Toggle */}
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(

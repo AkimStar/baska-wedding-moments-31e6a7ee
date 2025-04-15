@@ -1,16 +1,16 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from './LanguageProvider';
 
 const Restaurant = () => {
+  const { t } = useLanguage();
   return (
     <section id="restaurant" className="section-padding relative dark:bg-gradient-to-b dark:from-[#121418] dark:to-[#171820] dark:text-white transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <h2 className="heading-2 text-center mb-10 text-gray-800 dark:text-white">Нашият ресторант</h2>
+        <h2 className="heading-2 text-center mb-10 text-gray-800 dark:text-white">{t('restaurant_title')}</h2>
         <p className="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-12">
-          Идеално място за вашата сватбена церемония и тържество. Предлагаме елегантна обстановка, 
-          изискана кухня и персонализирано обслужване, за да направим вашия специален ден незабравим.
+          {t('restaurant_desc')}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
