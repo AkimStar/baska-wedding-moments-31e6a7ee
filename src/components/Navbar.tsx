@@ -185,6 +185,48 @@ const Navbar = () => {
                 theme === 'dark' ? "text-white" : "text-black"
               )} />
             </button>
+            {/* Mobile-only language and theme toggles at the top left */}
+            <div className="absolute top-6 left-6 flex flex-row items-center space-x-4 z-50">
+              <button
+                onClick={toggleLanguage}
+                className={cn(
+                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+                  language === 'bg' ? 'text-white dark:text-white' : 'text-white dark:text-white'
+                )}
+                aria-label="Toggle language"
+              >
+                <span className="transition-opacity duration-200">{language === 'bg' ? 'BG' : 'EN'}</span>
+              </button>
+              <Toggle 
+                aria-label="Toggle dark mode" 
+                className={cn(
+                  "p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+                  theme === 'dark' ? 'dark-glass btn-glow' : ''
+                )}
+                pressed={theme === 'dark'}
+                onPressedChange={toggleTheme}
+              >
+                {theme === 'dark' ? (
+                  <div className="relative">
+                    <Sun className={cn(
+                      "w-5 h-5 transition-all duration-300 animate-scale-in",
+                      "text-white"
+                    )} />
+                  </div>
+                ) : (
+                  <div className="relative">
+                    <Moon className={cn(
+                      "w-5 h-5 transition-all duration-300 animate-scale-in",
+                      "text-black"
+                    )} />
+                    <Sparkles className={cn(
+                      "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
+                      "text-black/70"
+                    )} />
+                  </div>
+                )}
+              </Toggle>
+            </div>
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               {menuItems.map((item) => (
                 <button
@@ -199,48 +241,6 @@ const Navbar = () => {
                   <ChevronRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               ))}
-              {/* Mobile-only language and theme toggles */}
-              <div className="flex flex-col items-center space-y-4 mt-8 w-full">
-                <button
-                  onClick={toggleLanguage}
-                  className={cn(
-                    "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50 w-24",
-                    language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white'
-                  )}
-                  aria-label="Toggle language"
-                >
-                  <span className="transition-opacity duration-200">{language === 'bg' ? 'BG' : 'EN'}</span>
-                </button>
-                <Toggle 
-                  aria-label="Toggle dark mode" 
-                  className={cn(
-                    "p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-                    theme === 'dark' ? 'dark-glass btn-glow' : ''
-                  )}
-                  pressed={theme === 'dark'}
-                  onPressedChange={toggleTheme}
-                >
-                  {theme === 'dark' ? (
-                    <div className="relative">
-                      <Sun className={cn(
-                        "w-5 h-5 transition-all duration-300 animate-scale-in",
-                        "text-white"
-                      )} />
-                    </div>
-                  ) : (
-                    <div className="relative">
-                      <Moon className={cn(
-                        "w-5 h-5 transition-all duration-300 animate-scale-in",
-                        "text-black"
-                      )} />
-                      <Sparkles className={cn(
-                        "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
-                        "text-black/70"
-                      )} />
-                    </div>
-                  )}
-                </Toggle>
-              </div>
             </div>
           </div>
         </div>
