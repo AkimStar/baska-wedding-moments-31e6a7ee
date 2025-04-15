@@ -24,7 +24,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 bg-[#F9F4EC] dark:bg-[#121418] transition-colors duration-300">
+    <footer className="py-12 bg-[#F9F4EC] dark:bg-[#23262e] transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">

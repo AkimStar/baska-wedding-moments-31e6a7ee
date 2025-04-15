@@ -6,7 +6,7 @@ import { useLanguage } from './LanguageProvider';
 const Restaurant = () => {
   const { t } = useLanguage();
   return (
-    <section id="restaurant" className="section-padding relative dark:bg-gradient-to-b dark:from-[#121418] dark:to-[#171820] dark:text-white transition-colors duration-300">
+    <section id="restaurant" className="section-padding relative dark:bg-gradient-to-b dark:from-[#23262e] dark:to-[#23262e] dark:text-white transition-colors duration-300">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-10 text-gray-800 dark:text-white">{t('restaurant_title')}</h2>
         <p className="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-12">
@@ -14,7 +14,7 @@ const Restaurant = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="space-y-6 flex flex-col justify-center champagne-card p-8 rounded-lg dark:from-[#121418] dark:to-[#161616] dark:border-[#222]/30 dark:text-white">
+          <div className="space-y-6 flex flex-col justify-center champagne-card p-8 rounded-lg dark:from-[#23262e] dark:to-[#23262e] dark:border-[#333]/30 dark:text-white">
             <h3 className="heading-3 text-gray-800 dark:text-white">{t('restaurant_main_title')}</h3>
             <p className="text-gray-700 dark:text-gray-200">
               {t('restaurant_main_desc')}
@@ -22,7 +22,7 @@ const Restaurant = () => {
             
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#222] dark:to-[#333] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#333] dark:to-[#444] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -30,7 +30,7 @@ const Restaurant = () => {
                 <p className="text-gray-700 dark:text-gray-200">{t('restaurant_garden')}</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#222] dark:to-[#333] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#333] dark:to-[#444] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -38,7 +38,7 @@ const Restaurant = () => {
                 <p className="text-gray-700 dark:text-gray-200">{t('restaurant_menu')}</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#222] dark:to-[#333] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#333] dark:to-[#444] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -46,7 +46,7 @@ const Restaurant = () => {
                 <p className="text-gray-700 dark:text-gray-200">{t('restaurant_staff')}</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#222] dark:to-[#333] flex items-center justify-center shadow-sm">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#333] dark:to-[#444] flex items-center justify-center shadow-sm">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -61,7 +61,7 @@ const Restaurant = () => {
           </div>
         </div>
         
-        <section className="py-16 bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8] dark:from-[#121418] dark:to-[#161616] rounded-lg transition-colors duration-300">
+        <section className="py-16 bg-gradient-to-b from-[#F9F4EC] to-[#F0E6D8] dark:from-[#23262e] dark:to-[#23262e] rounded-lg transition-colors duration-300">
           <div className="container mx-auto px-6">
             <h2 className="text-4xl font-semibold mb-12 text-center text-gray-800 dark:text-white">{t('restaurant_location_title')}</h2>
             
@@ -79,7 +79,7 @@ const Restaurant = () => {
         </section>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16">
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#121418]/60 dark:border-[#222]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#333]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" alt="Градинска церемония" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
@@ -89,7 +89,7 @@ const Restaurant = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#121418]/60 dark:border-[#222]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#333]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=2344&ixlib=rb-4.0.3" alt="Изискана трапеза" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
@@ -99,7 +99,7 @@ const Restaurant = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#121418]/60 dark:border-[#222]/30">
+          <Card className="bg-white/60 backdrop-blur-sm shadow-sm hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#333]/30">
             <CardContent className="p-6">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4">
                 <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3" alt="Приказна атмосфера" className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />

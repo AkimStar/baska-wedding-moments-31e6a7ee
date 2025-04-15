@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -17,7 +16,7 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
-      <div className="bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3] dark:from-[#1A1F2C] dark:via-[#221F26] dark:to-[#222222]">
+      <div className="bg-gradient-to-b from-[#F9F4EC] via-[#F0E6D8] to-[#E6D7C3] dark:from-[#23262e] dark:via-[#2a2d36] dark:to-[#2d2f36]">
         <About />
         <Gallery />
         <Testimonials />
