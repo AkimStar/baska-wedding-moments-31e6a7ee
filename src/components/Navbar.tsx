@@ -162,6 +162,17 @@ const Navbar = () => {
                 : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
               isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             )}>
+              {/* X button inside overlay */}
+              <button
+                onClick={toggleMobileMenu}
+                className="absolute top-6 right-6 z-50 p-2 rounded-full bg-transparent hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+                aria-label="Close mobile menu"
+              >
+                <X className={cn(
+                  "w-8 h-8 transition-all duration-300",
+                  theme === 'dark' ? "text-white" : "text-black"
+                )} />
+              </button>
               <div className="flex flex-col items-center justify-center h-full space-y-8">
                 {menuItems.map((item) => (
                   <button
