@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 
@@ -122,7 +121,7 @@ const Gallery = () => {
                 "px-5 py-2 rounded-full text-sm transition-colors duration-300",
                 activeCategory === cat.id
                   ? "bg-black text-white dark:bg-black dark:text-white" // Selected button - dark (nearly black) in both modes
-                  : "bg-gray-400 text-white dark:bg-gray-700 dark:text-white" // Non-selected button - medium gray in light mode, darker gray in dark mode
+                  : "bg-[#f8f1e7] dark:bg-gray-700"
               )}
             >
               {cat.name}
