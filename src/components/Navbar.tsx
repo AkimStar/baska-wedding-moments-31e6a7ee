@@ -108,8 +108,7 @@ const Navbar = () => {
           <button
             onClick={toggleLanguage}
             className={cn(
-              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-              scrolled ? 'text-black dark:text-white' : 'text-white'
+              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50 text-black dark:text-white",
             )}
             aria-label="Toggle language"
           >
@@ -127,19 +126,16 @@ const Navbar = () => {
             {theme === 'dark' ? (
               <div className="relative">
                 <Sun className={cn(
-                  "w-5 h-5 transition-all duration-300 animate-scale-in",
-                  scrolled ? "text-white" : "text-white"
+                  "w-5 h-5 transition-all duration-300 animate-scale-in text-white"
                 )} />
               </div>
             ) : (
               <div className="relative">
                 <Moon className={cn(
-                  "w-5 h-5 transition-all duration-300 animate-scale-in",
-                  scrolled ? "text-black" : "text-white"
+                  "w-5 h-5 transition-all duration-300 animate-scale-in text-black"
                 )} />
                 <Sparkles className={cn(
-                  "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
-                  scrolled ? "text-black/70" : "text-white/70"
+                  "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300 text-black/70"
                 )} />
               </div>
             )}
@@ -189,8 +185,7 @@ const Navbar = () => {
               <button
                 onClick={toggleLanguage}
                 className={cn(
-                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-                  'text-black dark:text-white'
+                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50 text-black dark:text-white"
                 )}
                 aria-label="Toggle language"
               >
@@ -207,19 +202,16 @@ const Navbar = () => {
                 {theme === 'dark' ? (
                   <div className="relative">
                     <Sun className={cn(
-                      "w-5 h-5 transition-all duration-300 animate-scale-in",
-                      "text-white"
+                      "w-5 h-5 transition-all duration-300 animate-scale-in text-white"
                     )} />
                   </div>
                 ) : (
                   <div className="relative">
                     <Moon className={cn(
-                      "w-5 h-5 transition-all duration-300 animate-scale-in",
-                      "text-black"
+                      "w-5 h-5 transition-all duration-300 animate-scale-in text-black"
                     )} />
                     <Sparkles className={cn(
-                      "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
-                      "text-black/70"
+                      "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300 text-black/70"
                     )} />
                   </div>
                 )}
