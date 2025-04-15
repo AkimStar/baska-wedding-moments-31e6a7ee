@@ -104,7 +104,7 @@ const Navbar = () => {
         
         {/* Theme and Language toggle buttons */}
         <div className="hidden md:flex items-center space-x-2">
-          {/* Language Toggle */}
+          {/* Language Toggle (desktop) */}
           <button
             onClick={toggleLanguage}
             className={cn(
@@ -115,7 +115,7 @@ const Navbar = () => {
           >
             <span className="transition-opacity duration-200">{language === 'bg' ? 'BG' : 'EN'}</span>
           </button>
-          {/* Theme Toggle */}
+          {/* Theme Toggle (desktop) */}
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(
@@ -190,7 +190,7 @@ const Navbar = () => {
                 onClick={toggleLanguage}
                 className={cn(
                   "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
-                  scrolled ? 'text-black dark:text-white' : 'text-white'
+                  'text-black dark:text-white'
                 )}
                 aria-label="Toggle language"
               >
