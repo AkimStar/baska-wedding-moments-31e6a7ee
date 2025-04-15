@@ -103,14 +103,13 @@ const Navbar = () => {
         </div>
         
         {/* Theme and Language toggle buttons */}
-        <div className="flex items-center space-x-2">
+        <div className="hidden md:flex items-center space-x-2">
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
             className={cn(
-              "ml-auto mr-2 px-3 py-2 rounded-full border border-transparent bg-white/70 dark:bg-black/40 text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-[#f8f1e7] dark:hover:bg-[#23262e] focus:outline-none focus:ring-2 focus:ring-accent/50",
-              language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white',
-              "shadow-sm"
+              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+              language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white'
             )}
             aria-label="Toggle language"
           >
@@ -120,10 +119,7 @@ const Navbar = () => {
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(
-              "ml-auto mr-4 p-2 rounded-full transition-all duration-300 relative overflow-hidden",
-              scrolled 
-                ? "bg-transparent hover:bg-black/10 dark:hover:bg-white/10" 
-                : "bg-transparent hover:bg-white/20",
+              "ml-auto mr-4 p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
               theme === 'dark' ? 'dark-glass btn-glow' : ''
             )}
             pressed={theme === 'dark'}
@@ -149,59 +145,101 @@ const Navbar = () => {
               </div>
             )}
           </Toggle>
+        </div>
 
-          <div className="md:hidden">
+        <div className="md:hidden">
+          <button
+            onClick={toggleMobileMenu}
+            className="z-50 relative p-2 touch-manipulation cursor-pointer"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className={cn(
+                "w-6 h-6 transition-all duration-300",
+                scrolled ? "text-gray-800 dark:text-white" : "text-white"
+              )} />
+            ) : (
+              <Menu className={cn(
+                "w-6 h-6 transition-all duration-300",
+                scrolled ? "text-gray-800 dark:text-white" : "text-white"
+              )} />
+            )}
+          </button>
+
+          {/* Mobile Menu with improved dark mode styling */}
+          <div className={cn(
+            "fixed top-0 left-0 w-screen h-screen z-50 transform transition-all duration-500 ease-in-out backdrop-blur-lg overflow-y-auto",
+            theme === 'dark' 
+              ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
+              : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
+            isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+          )}>
+            {/* X button inside overlay */}
             <button
               onClick={toggleMobileMenu}
-              className="z-50 relative p-2 touch-manipulation cursor-pointer"
-              aria-label="Toggle mobile menu"
+              className="absolute top-6 right-6 z-50 p-2 rounded-full bg-transparent hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+              aria-label="Close mobile menu"
             >
-              {isMobileMenuOpen ? (
-                <X className={cn(
-                  "w-6 h-6 transition-all duration-300",
-                  scrolled ? "text-gray-800 dark:text-white" : "text-white"
-                )} />
-              ) : (
-                <Menu className={cn(
-                  "w-6 h-6 transition-all duration-300",
-                  scrolled ? "text-gray-800 dark:text-white" : "text-white"
-                )} />
-              )}
+              <X className={cn(
+                "w-8 h-8 transition-all duration-300",
+                theme === 'dark' ? "text-white" : "text-black"
+              )} />
             </button>
-
-            {/* Mobile Menu with improved dark mode styling */}
-            <div className={cn(
-              "fixed top-0 left-0 w-screen h-screen z-50 transform transition-all duration-500 ease-in-out backdrop-blur-lg overflow-y-auto",
-              theme === 'dark' 
-                ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
-                : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
-              isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-            )}>
-              {/* X button inside overlay */}
-              <button
-                onClick={toggleMobileMenu}
-                className="absolute top-6 right-6 z-50 p-2 rounded-full bg-transparent hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
-                aria-label="Close mobile menu"
-              >
-                <X className={cn(
-                  "w-8 h-8 transition-all duration-300",
-                  theme === 'dark' ? "text-white" : "text-black"
-                )} />
-              </button>
-              <div className="flex flex-col items-center justify-center h-full space-y-8">
-                {menuItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={cn(
-                      "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-300 flex items-center group",
-                      theme === 'dark' ? 'glow-text' : ''
-                    )}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </button>
-                ))}
+            <div className="flex flex-col items-center justify-center h-full space-y-8">
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={cn(
+                    "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-300 flex items-center group",
+                    theme === 'dark' ? 'glow-text' : ''
+                  )}
+                >
+                  <span>{item.name}</span>
+                  <ChevronRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </button>
+              ))}
+              {/* Mobile-only language and theme toggles */}
+              <div className="flex flex-col items-center space-y-4 mt-8 w-full">
+                <button
+                  onClick={toggleLanguage}
+                  className={cn(
+                    "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:underline hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50 w-24",
+                    language === 'bg' ? 'text-black dark:text-white' : 'text-black dark:text-white'
+                  )}
+                  aria-label="Toggle language"
+                >
+                  <span className="transition-opacity duration-200">{language === 'bg' ? 'BG' : 'EN'}</span>
+                </button>
+                <Toggle 
+                  aria-label="Toggle dark mode" 
+                  className={cn(
+                    "p-2 transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/50",
+                    theme === 'dark' ? 'dark-glass btn-glow' : ''
+                  )}
+                  pressed={theme === 'dark'}
+                  onPressedChange={toggleTheme}
+                >
+                  {theme === 'dark' ? (
+                    <div className="relative">
+                      <Sun className={cn(
+                        "w-5 h-5 transition-all duration-300 animate-scale-in",
+                        "text-white"
+                      )} />
+                    </div>
+                  ) : (
+                    <div className="relative">
+                      <Moon className={cn(
+                        "w-5 h-5 transition-all duration-300 animate-scale-in",
+                        "text-black"
+                      )} />
+                      <Sparkles className={cn(
+                        "absolute -top-1 -right-1 w-3 h-3 transition-all duration-300",
+                        "text-black/70"
+                      )} />
+                    </div>
+                  )}
+                </Toggle>
               </div>
             </div>
           </div>
