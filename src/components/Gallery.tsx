@@ -108,7 +108,7 @@ const Gallery = () => {
     : null;
 
   return (
-    <section id="gallery" className="section-padding bg-white/60 backdrop-blur-sm">
+    <section id="gallery" className="section-padding bg-white/60 backdrop-blur-sm dark:bg-black/40">
       <div className="container mx-auto px-6">
         <h2 className="heading-2 text-center mb-10">Магията в кадри</h2>
         
@@ -121,8 +121,8 @@ const Gallery = () => {
               className={cn(
                 "px-5 py-2 rounded-full text-sm transition-colors duration-300",
                 activeCategory === cat.id
-                  ? "bg-black text-white"
-                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                  ? "bg-black text-white dark:bg-black dark:text-white" // Selected button - dark (nearly black) in both modes
+                  : "bg-gray-400 text-white dark:bg-gray-700 dark:text-white" // Non-selected button - medium gray in light mode, darker gray in dark mode
               )}
             >
               {cat.name}
