@@ -156,7 +156,7 @@ const Navbar = () => {
 
             {/* Mobile Menu with improved dark mode styling */}
             <div className={cn(
-              "fixed inset-0 z-40 transform transition-all duration-500 ease-in-out backdrop-blur-lg",
+              "fixed top-0 left-0 w-screen h-screen z-50 transform transition-all duration-500 ease-in-out backdrop-blur-lg overflow-y-auto",
               theme === 'dark' 
                 ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
                 : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
