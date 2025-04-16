@@ -109,15 +109,6 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-        
-        <div className="mt-16 text-center">
-          <a 
-            href="#contact" 
-            className="inline-block px-8 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full font-montserrat uppercase tracking-widest text-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-          >
-            {t('testimonials_cta')}
-          </a>
-        </div>
       </div>
     </section>
   );

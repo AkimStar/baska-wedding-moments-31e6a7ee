@@ -206,7 +206,7 @@ const Gallery = () => {
             
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 text-white hover:text-gray-300 z-10 bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all duration-300"
+              className="fixed top-4 right-4 text-white hover:text-gray-300 z-[100] bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all duration-300"
               aria-label="Close lightbox"
             >
               <X className="w-6 h-6" />

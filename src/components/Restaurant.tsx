@@ -74,14 +74,16 @@ const Restaurant = () => {
               />
             </div>
 
-            <div className="text-center bg-white/80 dark:bg-black/40 backdrop-blur-sm py-6 px-8 rounded-xl shadow-sm inline-block mx-auto">
-              <div className="flex items-center justify-center mb-4">
-                <MapPin className="w-6 h-6 text-gray-700 dark:text-gray-200 mr-2" />
-                <h3 className="text-2xl font-playfair text-gray-800 dark:text-white">{t('restaurant_location_name')}</h3>
+            <div className="md:flex md:justify-center">
+              <div className="text-center bg-white/80 dark:bg-black/40 backdrop-blur-sm py-6 px-8 rounded-xl shadow-sm inline-block mx-auto">
+                <div className="flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-gray-700 dark:text-gray-200 mr-2" />
+                  <h3 className="text-2xl font-playfair text-gray-800 dark:text-white">{t('restaurant_location_name')}</h3>
+                </div>
+                <p className="text-lg text-gray-700 dark:text-gray-200 font-montserrat">
+                  {t('restaurant_location_address')}
+                </p>
               </div>
-              <p className="text-lg text-gray-700 dark:text-gray-200 font-montserrat">
-                {t('restaurant_location_address')}
-              </p>
             </div>
           </div>
         </section>
