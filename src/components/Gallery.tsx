@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { cn } from "@/lib/utils";
 import { useLanguage } from './LanguageProvider';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -201,47 +200,48 @@ const Gallery = () => {
         </div>
         
         {/* Enhanced Lightbox with animations and improved controls */}
-        {selectedImage !== null && selectedImageData &&
-          ReactDOM.createPortal(
-            <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-              <div className="absolute inset-0 z-0" onClick={closeLightbox}></div>
-              <button
-                onClick={closeLightbox}
-                className="fixed top-4 right-4 text-white hover:text-gray-300 z-[100] bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all duration-300"
-                aria-label="Close lightbox"
-              >
-                <X className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => navigateImage("prev")}
-                className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="relative max-w-5xl w-full animate-scale-in">
-                <img 
-                  src={selectedImageData.src} 
-                  alt={selectedImageData.alt} 
-                  className="max-h-[85vh] max-w-full w-auto h-auto mx-auto object-contain rounded-lg shadow-2xl"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-                  <p className="text-white font-montserrat text-center">
-                    {selectedImageData.alt}
-                  </p>
-                </div>
+        {selectedImage !== null && selectedImageData && (
+          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
+            <div className="absolute inset-0 z-0" onClick={closeLightbox}></div>
+            
+            <button
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 text-white hover:text-gray-300 z-10 bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all duration-300"
+              aria-label="Close lightbox"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={() => navigateImage("prev")}
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <div className="relative max-w-5xl w-full animate-scale-in">
+              <img 
+                src={selectedImageData.src} 
+                alt={selectedImageData.alt} 
+                className="max-h-[85vh] max-w-full w-auto h-auto mx-auto object-contain rounded-lg shadow-2xl"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <p className="text-white font-montserrat text-center">
+                  {selectedImageData.alt}
+                </p>
               </div>
-              <button
-                onClick={() => navigateImage("next")}
-                className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>,
-            document.body
-          )
-        }
+            </div>
+            
+            <button
+              onClick={() => navigateImage("next")}
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
