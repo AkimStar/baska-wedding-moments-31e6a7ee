@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,14 +62,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Baska Production
+				// Enhanced color palette for Baska Production
 				blush: '#FFEEF2',
 				champagne: '#F9F5F0',
+				cream: '#F7F2EA',
+				sand: '#E6D7C3',
+				taupe: '#D0C0A6',
 				offwhite: '#F8F8F8',
-				// Dark mode custom colors
+				// Dark mode enhanced colors
 				darkBg: '#1A1F2C',
 				darkBg2: '#221F26',
 				darkBg3: '#222222',
+				darkAccent: '#2A2A35',
+				darkText: '#F5F5F5',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -113,6 +117,18 @@ export default {
 				'rotate-in': {
 					'0%': { transform: 'rotate(-45deg)', opacity: '0' },
 					'100%': { transform: 'rotate(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(30px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-30px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'text-focus-in': {
+					'0%': { filter: 'blur(12px)', opacity: '0' },
+					'100%': { filter: 'blur(0px)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -122,10 +138,38 @@ export default {
 				'fade-in-up': 'fade-in-up 0.7s ease-out forwards',
 				'zoom-in': 'zoom-in 0.3s ease-out forwards',
 				'scale-in': 'scale-in 0.3s ease-out forwards',
-				'rotate-in': 'rotate-in 0.3s ease-out forwards'
+				'rotate-in': 'rotate-in 0.3s ease-out forwards',
+				'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+				'slide-in-left': 'slide-in-left 0.5s ease-out forwards',
+				'text-focus-in': 'text-focus-in 0.8s ease-out forwards'
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
+				playfair: ['Playfair Display', 'serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+			},
+			letterSpacing: {
+				tightest: '-.075em',
+				tighter: '-.05em',
+				tight: '-.025em',
+				normal: '0',
+				wide: '.025em',
+				wider: '.05em',
+				widest: '.1em',
+				ultra: '.15em',
+			},
+			lineHeight: {
+				'extra-tight': '1.1',
+				'ultra-tight': '1',
+			},
+			boxShadow: {
+				'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
+				'elegant': '0 10px 30px rgba(0, 0, 0, 0.05)',
+				'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+			},
+			transitionDuration: {
+				'2000': '2000ms',
+				'3000': '3000ms',
 			},
 		}
 	},

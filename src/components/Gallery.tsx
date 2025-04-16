@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { useLanguage } from './LanguageProvider';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Sample gallery items - in a real app these would come from a CMS or API
 const galleryItems = [
@@ -64,6 +65,38 @@ const Gallery = () => {
   const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [animatedItems, setAnimatedItems] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Simulate loading delay for smoother transitions
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
+
+  useEffect(() => {
+    // Staggered animation for gallery items
+    if (!isLoading) {
+      const timer = setInterval(() => {
+        setAnimatedItems(prev => {
+          const nextIndex = prev.length;
+          if (nextIndex >= filteredImages.length) {
+            clearInterval(timer);
+            return prev;
+          }
+          return [...prev, filteredImages[nextIndex].id];
+        });
+      }, 100);
+
+      return () => clearInterval(timer);
+    } else {
+      setAnimatedItems([]);
+    }
+  }, [isLoading]);
 
   const categories = [
     { id: "all", name: t("gallery_all") },
@@ -109,21 +142,26 @@ const Gallery = () => {
     : null;
 
   return (
-    <section id="gallery" className="section-padding bg-white/60 backdrop-blur-sm dark:bg-black/40">
+    <section id="gallery" className="section-padding bg-gradient-to-b from-white/60 to-cream/60 backdrop-blur-sm dark:from-black/40 dark:to-darkBg/60">
       <div className="container mx-auto px-6">
-        <h2 className="heading-2 text-center mb-10">{t('gallery_title')}</h2>
+        <h2 className="heading-2 text-center mb-4 font-playfair">
+          {t('gallery_title')}
+        </h2>
+        <p className="text-center mb-10 max-w-2xl mx-auto text-gray-700 dark:text-gray-300 font-montserrat">
+          {t('gallery_subtitle')}
+        </p>
         
-        {/* Category filter */}
+        {/* Category filter with enhanced styling */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               className={cn(
-                "px-5 py-2 rounded-full text-sm transition-colors duration-300",
+                "px-6 py-2.5 rounded-full text-sm transition-all duration-500 font-montserrat tracking-wide shadow-sm hover:shadow-md",
                 activeCategory === cat.id
-                  ? "bg-black text-white dark:bg-black dark:text-white" // Selected button - dark (nearly black) in both modes
-                  : "bg-[#f8f1e7] dark:bg-gray-700"
+                  ? "bg-black text-white dark:bg-white dark:text-black transform scale-105" // Selected button - contrast in both modes
+                  : "bg-[#f8f1e7] text-gray-800 hover:bg-[#f0e6d8] dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
               )}
             >
               {cat.name}
@@ -131,58 +169,76 @@ const Gallery = () => {
           ))}
         </div>
         
-        {/* Gallery grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Gallery grid with enhanced animations and styling */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredImages.map((item) => (
             <div 
               key={item.id}
-              className="gallery-item rounded-lg overflow-hidden cursor-pointer"
+              className={cn(
+                "gallery-item rounded-lg overflow-hidden cursor-pointer shadow-elegant hover:shadow-soft transition-all duration-700 transform opacity-0",
+                animatedItems.includes(item.id) ? "animate-fade-in-up opacity-100" : "",
+                isLoading ? "opacity-0" : ""
+              )}
               onClick={() => openLightbox(item.id)}
             >
-              <img 
-                src={item.src} 
-                alt={item.alt} 
-                className="w-full h-80 object-cover"
-              />
+              <div className="relative overflow-hidden group">
+                <img 
+                  src={item.src} 
+                  alt={item.alt} 
+                  className="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white/80 dark:bg-black/80 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <span className="text-sm font-medium font-montserrat text-black dark:text-white">
+                      {t('gallery_view')}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
         
-        {/* Lightbox */}
+        {/* Enhanced Lightbox with animations and improved controls */}
         {selectedImage !== null && selectedImageData && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
+            <div className="absolute inset-0 z-0" onClick={closeLightbox}></div>
+            
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 text-white hover:text-gray-300 z-10"
+              className="absolute top-6 right-6 text-white hover:text-gray-300 z-10 bg-black/30 hover:bg-black/50 p-2 rounded-full transition-all duration-300"
+              aria-label="Close lightbox"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <X className="w-6 h-6" />
             </button>
             
             <button
               onClick={() => navigateImage("prev")}
-              className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300"
+              className="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+              aria-label="Previous image"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
+              <ChevronLeft className="w-6 h-6" />
             </button>
             
-            <img 
-              src={selectedImageData.src} 
-              alt={selectedImageData.alt} 
-              className="max-h-[85vh] max-w-[85vw] object-contain"
-            />
+            <div className="relative max-w-5xl w-full animate-scale-in">
+              <img 
+                src={selectedImageData.src} 
+                alt={selectedImageData.alt} 
+                className="max-h-[85vh] max-w-full w-auto h-auto mx-auto object-contain rounded-lg shadow-2xl"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <p className="text-white font-montserrat text-center">
+                  {selectedImageData.alt}
+                </p>
+              </div>
+            </div>
             
             <button
               onClick={() => navigateImage("next")}
-              className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300"
+              className="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/30 hover:bg-black/50 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
+              aria-label="Next image"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
+              <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         )}

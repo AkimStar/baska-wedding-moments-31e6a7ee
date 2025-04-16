@@ -64,9 +64,9 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed w-full z-50 transition-all duration-500 px-6 py-4",
+        "fixed w-full z-50 transition-all duration-700 px-6 py-4",
         scrolled 
-          ? "bg-gradient-to-r from-[#F9F4EC]/90 to-[#F0E6D8]/90 shadow-md backdrop-blur-md dark:from-[#181B22]/90 dark:to-[#23262e]/90 dark:shadow-black/20" 
+          ? "bg-gradient-to-r from-[#F9F4EC]/90 to-[#F0E6D8]/90 shadow-soft backdrop-blur-md dark:from-[#181B22]/90 dark:to-[#23262e]/90 dark:shadow-black/20" 
           : "bg-transparent"
       )}
     >
@@ -81,7 +81,7 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="Baska Production Logo" 
-            className="h-16 w-auto transition-transform hover:scale-105"
+            className="h-16 w-auto transition-transform hover:scale-105 duration-500"
           />
         </a>
         
@@ -91,7 +91,7 @@ const Navbar = () => {
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={cn(
-                "navbar-link transition-all duration-300 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:-bottom-1 after:left-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left",
+                "navbar-link transition-all duration-500 hover:scale-105 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:-bottom-1 after:left-0 after:origin-bottom-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-bottom-left",
                 scrolled 
                   ? "text-black/80 hover:text-black dark:text-white/90 dark:hover:text-white after:bg-black/60 dark:after:bg-white/60" 
                   : "text-white/90 hover:text-white after:bg-white/60"
@@ -108,8 +108,9 @@ const Navbar = () => {
           <button
             onClick={toggleLanguage}
             className={cn(
-              "ml-auto mr-2 px-2 py-1 text-xs font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50",
-              scrolled ? 'text-black dark:text-white' : 'text-white'
+              "ml-auto mr-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-ultra transition-colors duration-300 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50 rounded-full",
+              scrolled ? 'text-black dark:text-white' : 'text-white',
+              "border border-transparent hover:border-black/20 dark:hover:border-white/20"
             )}
             aria-label="Toggle language"
           >
@@ -119,7 +120,8 @@ const Navbar = () => {
           <Toggle 
             aria-label="Toggle dark mode" 
             className={cn(
-              "ml-auto mr-4 p-2 transition-colors duration-200 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50"
+              "ml-auto mr-4 p-2 transition-colors duration-300 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50 rounded-full",
+              "border border-transparent hover:border-black/20 dark:hover:border-white/20"
             )}
             pressed={theme === 'dark'}
             onPressedChange={toggleTheme}
@@ -167,7 +169,7 @@ const Navbar = () => {
 
           {/* Mobile Menu with improved dark mode styling */}
           <div className={cn(
-            "fixed top-0 left-0 w-screen h-screen z-50 transform transition-all duration-500 ease-in-out backdrop-blur-lg overflow-y-auto",
+            "fixed top-0 left-0 w-screen h-screen z-50 transform transition-all duration-700 ease-in-out backdrop-blur-lg overflow-y-auto",
             theme === 'dark' 
               ? "bg-gradient-to-b from-[#0A0B0F]/95 to-[#121418]/95 dark-glass" 
               : "bg-gradient-to-b from-[#F9F4EC]/95 to-[#F0E6D8]/95 glass-effect",
@@ -189,8 +191,9 @@ const Navbar = () => {
               <button
                 onClick={toggleLanguage}
                 className={cn(
-                  "px-2 py-1 text-base font-semibold uppercase tracking-wider transition-colors duration-200 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50",
-                  'text-black dark:text-white'
+                  "px-3 py-1.5 text-base font-semibold uppercase tracking-ultra transition-colors duration-300 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50 rounded-full",
+                  'text-black dark:text-white',
+                  "border border-transparent hover:border-black/20 dark:hover:border-white/20"
                 )}
                 aria-label="Toggle language"
               >
@@ -199,7 +202,8 @@ const Navbar = () => {
               <Toggle 
                 aria-label="Toggle dark mode" 
                 className={cn(
-                  "p-2 transition-colors duration-200 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50"
+                  "p-2 transition-colors duration-300 hover:text-accent hover:bg-black/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent/50 rounded-full",
+                  "border border-transparent hover:border-black/20 dark:hover:border-white/20"
                 )}
                 pressed={theme === 'dark'}
                 onPressedChange={toggleTheme}
@@ -226,14 +230,16 @@ const Navbar = () => {
               </Toggle>
             </div>
             <div className="flex flex-col items-center justify-center h-full space-y-8">
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={cn(
-                    "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-300 flex items-center group",
-                    theme === 'dark' ? 'glow-text' : ''
+                    "text-black/80 hover:text-black dark:text-white/80 dark:hover:text-white text-xl font-medium transition-all duration-500 flex items-center group font-montserrat",
+                    theme === 'dark' ? 'glow-text' : '',
+                    "opacity-0 animate-fade-in-up"
                   )}
+                  style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
                 >
                   <span>{item.name}</span>
                   <ChevronRight className="ml-2 w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />

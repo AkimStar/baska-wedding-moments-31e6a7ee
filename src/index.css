@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Import premium fonts */
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/montserrat/300.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
 
 @tailwind base;
 @tailwind components;
@@ -81,7 +90,7 @@
   }
 
   body {
-    @apply text-foreground font-inter overflow-x-hidden transition-colors duration-500;
+    @apply text-foreground overflow-x-hidden transition-colors duration-500 font-montserrat;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
@@ -115,25 +124,29 @@
   }
   
   .heading-1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-playfair;
+    letter-spacing: -0.02em;
   }
   
   .heading-2 {
-    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight font-playfair;
+    letter-spacing: -0.01em;
   }
   
   .heading-3 {
-    @apply text-xl sm:text-2xl font-semibold;
+    @apply text-xl sm:text-2xl font-semibold font-playfair;
   }
   
   .navbar-link {
-    @apply uppercase text-sm tracking-wider hover:text-black dark:hover:text-white transition-colors;
+    @apply uppercase text-sm tracking-wider hover:text-black dark:hover:text-white transition-colors font-montserrat font-medium;
+    letter-spacing: 0.05em;
   }
   
   .btn-primary {
     @apply px-6 py-3 bg-white text-black uppercase text-sm tracking-wider font-medium 
            hover:bg-[#F9F6F2] transition-colors duration-300 inline-block
-           dark:bg-[#222222] dark:text-white dark:hover:bg-[#333333];
+           dark:bg-[#222222] dark:text-white dark:hover:bg-[#333333] font-montserrat;
+    letter-spacing: 0.05em;
   }
   
   .gallery-item {
@@ -141,7 +154,7 @@
   }
   
   .gallery-item img {
-    @apply transition-transform duration-500;
+    @apply transition-transform duration-700;
   }
   
   .gallery-item:hover img {
@@ -370,5 +383,27 @@
   
   .dark .btn-glow:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Font utility classes */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Enhanced text styles */
+  .elegant-quote {
+    @apply font-playfair italic text-lg md:text-xl leading-relaxed;
+  }
+  
+  .caption-text {
+    @apply font-montserrat text-sm text-gray-600 dark:text-gray-300 tracking-wide;
+  }
+  
+  .subtitle-text {
+    @apply font-montserrat text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed;
   }
 }
