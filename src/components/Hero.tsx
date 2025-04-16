@@ -79,7 +79,10 @@ const Hero = () => {
 
         <div className="relative z-30 container mx-auto px-6 h-screen flex flex-col justify-center items-center text-center text-white">
           <div className="mb-6">
-            <h1 ref={titleRef} className="heading-1 text-6xl md:text-8xl font-bold tracking-tight text-shadow-lg">
+            <h1
+              ref={titleRef}
+              className="heading-1 text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-shadow-lg whitespace-nowrap"
+            >
               {splitText(t('hero_title').split(' ').join(' '))}
             </h1>
           </div>
