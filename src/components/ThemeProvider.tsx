@@ -14,15 +14,14 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Initialize theme from localStorage or system preference
+  // Initialize theme from localStorage (default to light)
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (storedTheme) {
       setTheme(storedTheme);
-    } else if (prefersDark) {
-      setTheme('dark');
+    } else {
+      setTheme('light');
     }
   }, []);
 
