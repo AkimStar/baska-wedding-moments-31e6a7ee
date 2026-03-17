@@ -1,143 +1,91 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from './LanguageProvider';
-import { Check, MapPin, Utensils, Users } from 'lucide-react';
 
 const Restaurant = () => {
   const { t } = useLanguage();
-  return (
-    <section id="restaurant" className="section-padding relative bg-gradient-to-b from-white/80 to-cream/40 dark:from-darkBg/80 dark:to-black/60 dark:text-white transition-colors duration-500">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="heading-2 mb-3 text-gray-800 dark:text-white font-playfair">{t('restaurant_title')}</h2>
-          <p className="text-gray-700 dark:text-gray-200 max-w-3xl mx-auto font-montserrat">
-            {t('restaurant_desc')}
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-          <div className="space-y-6 flex flex-col justify-center champagne-card p-8 rounded-xl shadow-elegant dark:bg-gradient-to-b dark:from-[#23262e]/80 dark:to-[#181a20]/80 dark:border-[#2A2A35]/30 transform transition-all duration-500 hover:shadow-soft">
-            <h3 className="heading-3 text-gray-800 dark:text-white font-playfair">{t('restaurant_main_title')}</h3>
-            <p className="text-gray-700 dark:text-gray-200 font-montserrat leading-relaxed">
-              {t('restaurant_main_desc')}
-            </p>
-            
-            <div className="space-y-4 mt-2">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#2A2A35] dark:to-[#23262e] flex items-center justify-center shadow-sm">
-                  <Check className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_garden')}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#2A2A35] dark:to-[#23262e] flex items-center justify-center shadow-sm">
-                  <Check className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_menu')}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#2A2A35] dark:to-[#23262e] flex items-center justify-center shadow-sm">
-                  <Check className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_staff')}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#F9F4EC] to-[#E6D7C3] dark:from-[#2A2A35] dark:to-[#23262e] flex items-center justify-center shadow-sm">
-                  <Check className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_decor')}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative h-[450px] overflow-hidden rounded-xl shadow-elegant hover-lift group">
-            <img 
-              alt="Черно и Бяло - Елегантна обстановка" 
-              className="w-full h-full object-cover rounded-xl transition-transform duration-1000 group-hover:scale-105" 
-              src="https://i.ibb.co/HfRs9WjC/restaurant-image.jpg" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
-        </div>
-        
-        <section className="py-16 bg-gradient-to-b from-[#F9F4EC]/80 to-[#F0E6D8]/80 dark:from-[#23262e]/90 dark:to-[#181a20]/90 rounded-xl shadow-elegant transition-colors duration-500 mb-16">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-playfair mb-12 text-center text-gray-800 dark:text-white">{t('restaurant_location_title')}</h2>
-            
-            <div className="w-full aspect-[16/9] rounded-xl overflow-hidden shadow-elegant mb-12 transform transition-all duration-500 hover:shadow-soft">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.8042459183503!2d27.259390277379826!3d44.108031022893385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b01feecfb988e9%3A0xa76846ef80ee6169!2z0KfQtdGA0L3QviDQuCDQkdGP0LvQvg!5e0!3m2!1sbg!2sbg!4v1744448324163!5m2!1sbg!2sbg" 
-                className="w-full h-full border-0" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade" 
-              />
-            </div>
 
-            <div className="md:flex md:justify-center">
-              <div className="text-center bg-white/80 dark:bg-black/40 backdrop-blur-sm py-6 px-8 rounded-xl shadow-sm inline-block mx-auto">
-                <div className="flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-gray-700 dark:text-gray-200 mr-2" />
-                  <h3 className="text-2xl font-playfair text-gray-800 dark:text-white">{t('restaurant_location_name')}</h3>
-                </div>
-                <p className="text-lg text-gray-700 dark:text-gray-200 font-montserrat">
-                  {t('restaurant_location_address')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+  const features = [
+    { title: t('restaurant_garden'), desc: t('restaurant_card1_desc') },
+    { title: t('restaurant_menu'), desc: t('restaurant_card2_desc') },
+    { title: t('restaurant_staff'), desc: t('restaurant_card3_desc') },
+    { title: t('restaurant_decor'), desc: t('restaurant_card4_desc') }
+  ];
+
+  return (
+    <section id="restaurant" className="bg-background text-foreground py-32 border-y border-border transition-colors duration-1000">
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
-          <Card className="bg-white/60 backdrop-blur-sm shadow-elegant hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#2A2A35]/30 transition-all duration-500 overflow-hidden rounded-xl">
-            <CardContent className="p-0">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3" 
-                  alt="Градинска церемония" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                />
-              </div>
-              <div className="p-6">
-                <h4 className="font-medium mb-2 text-gray-800 dark:text-white font-playfair text-xl">{t('restaurant_card1_title')}</h4>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_card1_desc')}</p>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white/60 backdrop-blur-sm shadow-elegant hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#2A2A35]/30 transition-all duration-500 overflow-hidden rounded-xl">
-            <CardContent className="p-0">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&q=80&w=2344&ixlib=rb-4.0.3" 
-                  alt="Изискана трапеза" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                />
-              </div>
-              <div className="p-6">
-                <h4 className="font-medium mb-2 text-gray-800 dark:text-white font-playfair text-xl">{t('restaurant_card2_title')}</h4>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_card2_desc')}</p>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-white/60 backdrop-blur-sm shadow-elegant hover-lift border border-[#E6D7C3]/30 dark:bg-[#23262e]/60 dark:border-[#2A2A35]/30 transition-all duration-500 overflow-hidden rounded-xl">
-            <CardContent className="p-0">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3" 
-                  alt="Приказна атмосфера" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                />
-              </div>
-              <div className="p-6">
-                <h4 className="font-medium mb-2 text-gray-800 dark:text-white font-playfair text-xl">{t('restaurant_card3_title')}</h4>
-                <p className="text-gray-700 dark:text-gray-200 font-montserrat">{t('restaurant_card3_desc')}</p>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Massive Typographic Header */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-6 md:gap-8 text-center md:text-left">
+          <div className="max-w-4xl flex flex-col items-center md:items-start">
+            <span className="font-montserrat text-[10px] tracking-[0.4em] uppercase text-foreground/50 mb-4 md:mb-8 block">
+              {t('restaurant_title')}
+            </span>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-playfair tracking-tight leading-none text-foreground">
+              {t('restaurant_main_title').replace(/Ресторант |"/g, '') || "Черно и Бяло"}
+            </h2>
+          </div>
+          <div className="max-w-xs pb-2 mt-2 md:mt-0 md:text-right">
+            <p className="font-serif italic text-xl md:text-2xl text-foreground/70">
+              {t('restaurant_desc')}
+            </p>
+          </div>
+        </div>
+
+        {/* Cinematic Wide Image */}
+        <div className="w-full aspect-[16/9] md:aspect-[3/1] overflow-hidden bg-muted mb-12 lg:mb-16 relative group">
+          <img 
+            src="https://i.ibb.co/HfRs9WjC/restaurant-image.jpg" 
+            alt="Restaurant Cherno i Byalo"
+            className="w-full h-full object-cover transition-transform duration-1000 scale-105 group-hover:scale-100"
+          />
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center mb-20 px-4">
+           <p className="text-base md:text-lg text-foreground/80 font-light leading-relaxed">
+             {t('restaurant_main_desc')}
+           </p>
+        </div>
+
+        {/* Minimal Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-t border-border pt-16">
+          {features.map((feature, idx) => (
+            <div key={idx} className="flex flex-col gap-4 group">
+              <span className="font-montserrat text-[10px] tracking-widest text-foreground/40 block transition-colors duration-500 group-hover:text-foreground">
+                0{idx + 1} —
+              </span>
+              <h4 className="font-playfair text-2xl text-foreground">{feature.title}</h4>
+              <p className="font-light text-sm text-foreground/70 leading-relaxed font-montserrat">
+                {feature.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+      {/* Location Bar */}
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl mt-32">
+        <div className="bg-muted/30 border border-border p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 hover:bg-muted/50 transition-colors duration-500 shadow-sm">
+          <div className="text-center md:text-left">
+            <h3 className="font-playfair text-3xl mb-3 text-foreground">
+              {t('restaurant_location_name')}
+            </h3>
+            <p className="text-foreground/70 text-sm font-light font-montserrat">
+              {t('restaurant_location_address')}
+            </p>
+          </div>
+          <a 
+            href="https://maps.app.goo.gl/GAHXmcU6UY78Kbjt5" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-10 py-5 bg-foreground text-background font-montserrat text-xs tracking-[0.2em] uppercase hover:bg-foreground/90 hover:scale-105 transition-all duration-300"
+          >
+            {t('restaurant_get_directions')}
+          </a>
         </div>
       </div>
+
     </section>
   );
 };

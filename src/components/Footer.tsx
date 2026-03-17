@@ -24,22 +24,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-12 bg-[#F9F4EC] dark:bg-[#23262e] transition-colors duration-300">
+    <footer className="py-12 bg-gradient-to-b from-[#f9f8f4] to-[#f9f3ec] dark:from-[#23262e] dark:to-[#1a1c23] transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center">
-            <img 
-              src="/logo.png" 
-              alt="Baska Production Logo" 
-              className="h-16 w-auto mb-3" 
+            <img
+              src="/logo.png"
+              alt="Baska Production Logo"
+              className="h-16 w-auto mb-3"
             />
             <p className="text-sm text-gray-600 dark:text-gray-300">{t('footer_photographer')}</p>
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8">
-            {menuItems.map(item => 
-              <button 
-                key={item.id} 
-                onClick={() => scrollToSection(item.id)} 
+            {menuItems.map(item =>
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className="text-sm text-gray-600 hover:text-gray-900 transition-colors hover-lift dark:text-gray-300 dark:hover:text-white"
               >
                 {item.name}
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
           <div className="w-full max-w-lg mx-auto border-t border-[#E6D7C3] dark:border-[#333] pt-6">
             <p className="text-sm text-gray-600 dark:text-gray-300 text-center">
-              © 2025 Baska Production. {t('footer_rights')}
+              © 2026 Baska Production. {t('footer_rights')}
             </p>
           </div>
         </div>
