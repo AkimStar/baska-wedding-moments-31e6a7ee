@@ -32,7 +32,7 @@ const Contact = () => {
              href="tel:+359897660627" 
              className="heading-2 hover:text-primary transition-colors inline-block"
            >
-             +359 897 650 627
+             +359 897 660 627
            </a>
         </div>
         

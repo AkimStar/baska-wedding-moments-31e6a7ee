@@ -35,7 +35,7 @@ const Restaurant = () => {
         {/* Cinematic Wide Image */}
         <div className="w-full aspect-[16/9] md:aspect-[3/1] overflow-hidden bg-muted mb-12 lg:mb-16 relative group">
           <img 
-            src="https://i.ibb.co/HfRs9WjC/restaurant-image.jpg" 
+            src="/lovable-uploads/restaurant-image.webp" 
             alt="Restaurant Cherno i Byalo"
             className="w-full h-full object-cover transition-transform duration-1000 scale-105 group-hover:scale-100"
           />

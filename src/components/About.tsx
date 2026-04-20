@@ -33,7 +33,7 @@ const About = () => {
           <div className="flex-1 w-full space-y-8">
              <div className="aspect-[4/5] w-full overflow-hidden">
                <img 
-                 src="/lovable-uploads/about-image.jpeg" 
+                 src="/lovable-uploads/about-image.webp" 
                  alt="Baska Production Team"
                  className="w-full h-full object-cover img-hover-scale grayscale-[20%]"
                />
