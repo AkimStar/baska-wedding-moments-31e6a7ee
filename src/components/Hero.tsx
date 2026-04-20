@@ -149,8 +149,14 @@ const Hero = () => {
           <span className="text-white/50 text-[10px] uppercase tracking-[0.3em] mb-4 font-montserrat group-hover:text-white transition-colors duration-300">
             {t('hero_scroll')}
           </span>
-          <div className="w-[1px] h-12 bg-white/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-[30%] bg-white animate-[bounce_2s_infinite]" />
+          <div className="w-[1px] h-12 bg-white/15 relative overflow-hidden">
+            <div
+              className="absolute left-0 w-full h-[45%] animate-light-down"
+              style={{
+                background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0) 100%)',
+                boxShadow: '0 0 8px rgba(255,255,255,0.85)',
+              }}
+            />
           </div>
         </div>
       </div>

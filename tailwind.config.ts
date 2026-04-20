@@ -129,6 +129,12 @@ export default {
 				'text-focus-in': {
 					'0%': { filter: 'blur(12px)', opacity: '0' },
 					'100%': { filter: 'blur(0px)', opacity: '1' }
+				},
+				'light-down': {
+					'0%':   { transform: 'translateY(-100%)', opacity: '0' },
+					'15%':  { opacity: '1' },
+					'85%':  { opacity: '1' },
+					'100%': { transform: 'translateY(100%)', opacity: '0' }
 				}
 			},
 			animation: {
@@ -141,7 +147,8 @@ export default {
 				'rotate-in': 'rotate-in 0.3s ease-out forwards',
 				'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
 				'slide-in-left': 'slide-in-left 0.5s ease-out forwards',
-				'text-focus-in': 'text-focus-in 0.8s ease-out forwards'
+				'text-focus-in': 'text-focus-in 0.8s ease-out forwards',
+				'light-down': 'light-down 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite'
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
