@@ -4,15 +4,15 @@ import { useLanguage } from './LanguageProvider';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryItems = [
-  { id: 1, src: "/gallery/gallery-1.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 2, src: "/gallery/gallery-2.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 3, src: "/gallery/gallery-3.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 4, src: "/gallery/gallery-4.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 5, src: "/gallery/gallery-5.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 6, src: "/gallery/gallery-6.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 7, src: "/gallery/gallery-7.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 8, src: "/gallery/gallery-8.webp", alt: "Сватбен момент — Baska Production" },
-  { id: 9, src: "/gallery/gallery-9.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 1, src: "/gallery/gallery-1.webp", alt: "Baska Production®" },
+  { id: 2, src: "/gallery/gallery-2.webp", alt: "Baska Production®" },
+  { id: 3, src: "/gallery/gallery-3.webp", alt: "Baska Production®" },
+  { id: 4, src: "/gallery/gallery-4.webp", alt: "Baska Production®" },
+  { id: 5, src: "/gallery/gallery-5.webp", alt: "Baska Production®" },
+  { id: 6, src: "/gallery/gallery-6.webp", alt: "Baska Production®" },
+  { id: 7, src: "/gallery/gallery-7.webp", alt: "Baska Production®" },
+  { id: 8, src: "/gallery/gallery-8.webp", alt: "Baska Production®" },
+  { id: 9, src: "/gallery/gallery-9.webp", alt: "Baska Production®" },
 ];
 
 const Gallery = () => {
