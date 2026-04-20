@@ -48,8 +48,8 @@ const Gallery = () => {
       <div className="container mx-auto px-6 lg:px-12">
 
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="caption-text">{t('gallery_subtitle')}</span>
-          <h2 className="heading-2">{t('gallery_title')}</h2>
+          <span className="caption-text">{t('gallery_title')}</span>
+          <h2 className="heading-2">{t('gallery_subtitle')}</h2>
         </div>
 
         {/* Strict CSS Grid - PERFECT alignment */}
