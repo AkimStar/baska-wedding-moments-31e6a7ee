@@ -1,34 +1,23 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { cn } from "@/lib/utils";
 import { useLanguage } from './LanguageProvider';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryItems = [
-  { id: 1, src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=800", alt: "Сватбена двойка", categories: ["all", "outdoor"] },
-  { id: 2, src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800", alt: "Булка с букет", categories: ["all", "intimate"] },
-  { id: 3, src: "https://images.unsplash.com/photo-1595407753234-0882f1e77954?auto=format&fit=crop&q=80&w=800", alt: "Сватбена церемония", categories: ["all", "outdoor"] },
-  { id: 4, src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800", alt: "Младоженци танцуват", categories: ["all", "indoor"] },
-  { id: 5, src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=800", alt: "Булченски пръстен", categories: ["all", "intimate", "indoor"] },
-  { id: 6, src: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=800", alt: "Приготвяне на булката", categories: ["all", "intimate"] },
-  { id: 7, src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800", alt: "Сватбени детайли", categories: ["all", "indoor"] },
-  { id: 8, src: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&q=80&w=800", alt: "Младоженци в природата", categories: ["all", "outdoor", "mountain"] },
-  { id: 9, src: "https://images.unsplash.com/photo-1731515672817-0491d19c9f19?auto=format&fit=crop&q=80&w=800", alt: "Сватбен прием", categories: ["all", "city"] }
+  { id: 1, src: "/gallery/gallery-1.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 2, src: "/gallery/gallery-2.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 3, src: "/gallery/gallery-3.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 4, src: "/gallery/gallery-4.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 5, src: "/gallery/gallery-5.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 6, src: "/gallery/gallery-6.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 7, src: "/gallery/gallery-7.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 8, src: "/gallery/gallery-8.webp", alt: "Сватбен момент — Baska Production" },
+  { id: 9, src: "/gallery/gallery-9.webp", alt: "Сватбен момент — Baska Production" },
 ];
 
 const Gallery = () => {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  
-  const categories = [
-    { id: "all", name: t("gallery_all") },
-    { id: "outdoor", name: t("gallery_outdoor") },
-    { id: "intimate", name: t("gallery_intimate") },
-    { id: "city", name: t("gallery_city") }
-  ];
-
-  const filteredImages = galleryItems.filter(item => item.categories.includes(activeCategory));
 
   const openLightbox = (id: number) => {
     setSelectedImage(id);
@@ -42,14 +31,14 @@ const Gallery = () => {
 
   const navigateImage = (direction: "prev" | "next") => {
     if (selectedImage === null) return;
-    const currentIndex = filteredImages.findIndex(img => img.id === selectedImage);
+    const currentIndex = galleryItems.findIndex(img => img.id === selectedImage);
     if (currentIndex === -1) return;
-    
-    let newIndex = direction === "prev"
-      ? (currentIndex - 1 + filteredImages.length) % filteredImages.length
-      : (currentIndex + 1) % filteredImages.length;
-    
-    setSelectedImage(filteredImages[newIndex].id);
+
+    const newIndex = direction === "prev"
+      ? (currentIndex - 1 + galleryItems.length) % galleryItems.length
+      : (currentIndex + 1) % galleryItems.length;
+
+    setSelectedImage(galleryItems[newIndex].id);
   };
 
   const selectedImageData = selectedImage !== null ? galleryItems.find(item => item.id === selectedImage) : null;
@@ -57,42 +46,26 @@ const Gallery = () => {
   return (
     <section id="gallery" className="section-padding bg-background border-b border-border">
       <div className="container mx-auto px-6 lg:px-12">
-        
+
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="caption-text">{t('gallery_title')}</span>
-          <h2 className="heading-2 mb-10">{t('gallery_subtitle')}</h2>
-          
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {categories.map(cat => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={cn(
-                  "text-xs uppercase tracking-widest font-medium transition-colors duration-300 pb-2 border-b-2",
-                  activeCategory === cat.id
-                    ? "text-foreground border-foreground"
-                    : "text-muted-foreground border-transparent hover:text-foreground/70"
-                )}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
+          <span className="caption-text">{t('gallery_subtitle')}</span>
+          <h2 className="heading-2">{t('gallery_title')}</h2>
         </div>
-        
+
         {/* Strict CSS Grid - PERFECT alignment */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4 lg:gap-6 w-full max-w-7xl mx-auto">
-          {filteredImages.map((item) => (
-            <div 
-              key={`${item.id}-${activeCategory}`} 
+          {galleryItems.map((item) => (
+            <div
+              key={item.id}
               className="relative aspect-square overflow-hidden group cursor-pointer bg-muted"
               onClick={() => openLightbox(item.id)}
             >
-              <img 
-                src={item.src} 
-                alt={item.alt} 
+              <img
+                src={item.src}
+                alt={item.alt}
                 className="w-full h-full object-cover img-hover-scale"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 flex items-center justify-center">
                  <span className="text-white uppercase tracking-[0.2em] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
