@@ -112,11 +112,6 @@ hero = Image.alpha_composite(hero, vignette_layer(W, H, intensity=110))
 
 draw = ImageDraw.Draw(hero)
 
-# --- 3. Cinematic letterbox-style hairlines (top + bottom thin ticks) ---
-# Thin horizontal hairlines near edges
-draw.line([(60, 44), (W - 60, 44)], fill=(255, 255, 255, 40), width=1)
-draw.line([(60, H - 44), (W - 60, H - 44)], fill=(255, 255, 255, 40), width=1)
-
 # --- 4. Top editorial header: corner tags ---
 f_tag = ImageFont.truetype(SANS_SBOLD, 15)
 # Left tag
@@ -137,19 +132,7 @@ right_tag = "СИЛИСТРА  ·  БЪЛГАРИЯ"
 rw = sum(draw.textbbox((0, 0), ch, font=f_tag)[2] for ch in right_tag) + 4 * (len(right_tag) - 1)
 draw_tracked(draw, right_tag, W - 60 - rw, 20, f_tag, (230, 220, 200, 220), tracking=4)
 
-# --- 5. Small centered eyebrow above logo ---
-f_eyebrow = ImageFont.truetype(SANS_SBOLD, 13)
-draw_centered(draw, "WEDDING  STORYTELLERS  ·  EST.  2014",
-              220, f_eyebrow, (220, 200, 165, 255), tracking=6)
-
-# Tiny horizontal hairline above logo
 cx = W // 2
-draw.line([(cx - 80, 248), (cx - 16, 248)], fill=(210, 178, 128, 200), width=1)
-draw.line([(cx + 16, 248), (cx + 80, 248)], fill=(210, 178, 128, 200), width=1)
-# Tiny diamond
-d = 3
-draw.polygon([(cx, 248 - d), (cx + d, 248), (cx, 248 + d), (cx - d, 248)],
-             fill=(210, 178, 128, 255))
 
 # --- 6. Logo (inverted to warm off-white) centered ---
 logo = Image.open(LOGO).convert("RGBA")
@@ -174,7 +157,7 @@ shadow_resized = shadow_blur.resize(
     (target_w, int(shadow_blur.height * ratio)), Image.LANCZOS)
 
 lx = (W - logo_resized.width) // 2
-ly = 268
+ly = (H - logo_resized.height) // 2 - 30
 # shadow slightly offset
 hero.paste(shadow_resized, (lx + 2, ly + 4), shadow_resized)
 hero.paste(logo_resized, (lx, ly), logo_resized)
@@ -188,14 +171,9 @@ draw_centered(draw, "Улавяме Вашите мечтани сватбени
               tag_y, f_serif, (245, 238, 222, 255))
 
 # --- 8. Bottom URL block ---
-# Thin gold horizontal rule + URL
-url_y = H - 70
-draw.line([(cx - 210, url_y), (cx - 60, url_y)], fill=(210, 178, 128, 180), width=1)
-draw.line([(cx + 60, url_y), (cx + 210, url_y)], fill=(210, 178, 128, 180), width=1)
-
-f_url = ImageFont.truetype(SERIF_REG, 19)
+f_url = ImageFont.truetype(SERIF_REG, 20)
 draw_centered(draw, "baskaproduction.com",
-              url_y - 12, f_url, (245, 238, 222, 255))
+              H - 60, f_url, (245, 238, 222, 255))
 
 # --- 9. Save ---
 final = hero.convert("RGB")
