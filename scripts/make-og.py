@@ -124,14 +124,19 @@ hero = Image.open(HERO).convert("RGB")
 hero = cover_crop(hero, PW, PH)
 hero = warm_cinematic_grade(hero).convert("RGBA")
 
-# --- 2. Overlays (no bright middle band; dark lower half for text) ---
-hero = Image.alpha_composite(hero, bottom_darken_gradient(PW, PH, peak_alpha=180))
-hero = Image.alpha_composite(hero, vignette_layer(PW, PH, intensity=90))
+# --- 2. Overlays — uniform dark wash first so nothing in the middle
+#        is brighter than the edges (prevents the logo's camera body
+#        outline from framing a bright rectangle of photo) ---
+hero = Image.alpha_composite(hero, Image.new("RGBA", (PW, PH), (4, 3, 2, 155)))
+# Tiny extra vignette on corners only
+hero = Image.alpha_composite(hero, vignette_layer(PW, PH, intensity=70))
 
-# Soft radial darken behind logo area so logo pops without a visible rectangle
+# Extra radial darkening CENTERED ON THE LOGO so the area the camera body
+# outline encloses is even darker than the rest of the photo.
+# Logo will sit at photo-local y ~ (PH/2 - 40 - OUTER) ≈ 239
 hero = Image.alpha_composite(
     hero,
-    radial_darken(PW, PH, PW // 2, int(PH * 0.62), 360, 100),
+    radial_darken(PW, PH, PW // 2, PH // 2 - 30, 420, 120),
 )
 
 # --- 3. Build the slim frame: outer dark, thin gold, inner ink hairline ---
@@ -171,11 +176,9 @@ rgb = Image.merge("RGB", (r, g, b))
 inv = ImageChops.invert(rgb)
 warm_tint = Image.new("RGB", inv.size, WHITE)
 inv_warm = ImageChops.multiply(inv, warm_tint)
-# Dial opacity down so outlines blend into the photo
-a_soft = a.point(lambda v: int(v * 0.70))
-logo_light = Image.merge("RGBA", (*inv_warm.split(), a_soft))
+logo_light = Image.merge("RGBA", (*inv_warm.split(), a))
 
-target_w = 330
+target_w = 480
 ratio = target_w / logo_light.width
 logo_resized = logo_light.resize(
     (target_w, int(logo_light.height * ratio)), Image.LANCZOS)
